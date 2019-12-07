@@ -1,0 +1,1884 @@
+use PND_Project
+db.shoes.insert([{
+"id":1, 
+    "brand":"New Balance", 
+    "model":"997", 
+    "type":"Trainers", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":126.33,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[3,4,5,6,7,8,9]
+            },
+            "picture":"https://images.asos-media.com/products/new-balance-997-trainers-in-black/12883809-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":2, 
+    "brand":"Superga", 
+    "model":"2736 Platform Canvas", 
+    "type":"Plimsoll", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":94.75,
+                "currency":"USD"
+            },
+            "color":"Beige", 
+            "size":{
+                "UK":[6,7,8,9,10,11]
+            },
+            "picture":"https://images.asos-media.com/products/superga-2736-platform-canvas-plimsolls-in-beige/12689305-3?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":3, 
+    "brand":"Dr. Martens", 
+    "model":"3989 SMOOTH", 
+    "type":"Brogue", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":203.70,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[5,6]
+            },
+            "picture":"https://images.asos-media.com/products/dr-martens-3989-brogues-in-black/5561132-3?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":4, 
+    "brand":"New Balance", 
+    "model":"574 Borg", 
+    "type":"Trainers", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":126.33,
+                "currency":"USD"
+            },
+            "color":"White", 
+            "size":{
+                "UK":[3,4,5,6,7,8,9]
+            },
+            "picture":"https://images.asos-media.com/products/new-balance-574-borg-trainers-in-white/12883835-1-white?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":5, 
+    "brand":"Dr. Martens", 
+    "model":"8053 DM'S WINTERGRIP", 
+    "type":"Derby", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":203.70,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[13]
+            },
+            "picture":"https://images.asos-media.com/products/dr-martens-8053-shoes-in-black/9981066-3?$XXL$&wid=513&fit=constrain"
+        },
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":189.49,
+                "currency":"USD"
+            },
+            "color":"Brown", 
+            "size":{
+                "UK":[6]
+            },
+            "picture":"https://images.asos-media.com/products/dr-martens-8053-shoes-in-brown/9981071-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":6, 
+    "brand":"Dr. Martens", 
+    "model":"ADRIAN TASSEL LOAFERS", 
+    "type":"Loafers", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":203.70,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[10,11]
+            },
+            "picture":"https://images.asos-media.com/products/dr-martens-adrian-tassel-loafers-in-black/5561131-1-black?$XXL$&wid=513&fit=constrain"
+        },
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":203.70,
+                "currency":"USD"
+            },
+            "color":"Red", 
+            "size":{
+                "UK":[6,7,8,9,10,11,12]
+            },
+            "picture":"https://images.asos-media.com/products/dr-martens-adrian-tassel-loafers-in-burgundy/5561125-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":7, 
+    "brand":"Nike", 
+    "model":"Air Force 1 high '07", 
+    "type":"Trainers", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":173.70,
+                "currency":"USD"
+            },
+            "color":"Tan", 
+            "size":{
+                "UK":[6,7,8,9,10,11,12,13]
+            },
+            "picture":"https://images.asos-media.com/products/nike-air-force-1-high-07-trainers-in-flax/12489031-4?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":8, 
+    "brand":"Nike", 
+    "model":"Air Max 200", 
+    "type":"Trainers", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":173.70,
+                "currency":"USD"
+            },
+            "color":"White", 
+            "size":{
+                "UK":[6,7,8,9,10,11,12,13]
+            },
+            "picture":"https://images.asos-media.com/products/nike-air-max-200-trainers-in-white-black-aq2568-104/12490105-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":9, 
+    "brand":"Nike", 
+    "model":"Air Max 270 React Offset Pastel", 
+    "type":"Trainers", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":236.87,
+                "currency":"USD"
+            },
+            "color":"White", 
+            "size":{
+                "UK":[3,4,5,6,7,8,9]
+            },
+            "picture":"https://images.asos-media.com/products/nike-air-max-270-react-offset-pastel-trainers/12769496-1-pastel?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":10, 
+    "brand":"Nike", 
+    "model":"Air Max bella", 
+    "type":"Trainers", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":110.54,
+                "currency":"USD"
+            },
+            "color":"Pink", 
+            "size":{
+                "UK":[3,4,6,7,8]
+            },
+            "picture":"https://images.asos-media.com/products/nike-training-air-max-bella-trainers-in-pink/11709072-1-pink?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":11, 
+    "brand":"Simmi", 
+    "model":"ALORA NUDE PATENT CLEAR BLOCK HEEL MULES", 
+    "type":"Heeled", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":47.37,
+                "currency":"USD"
+            },
+            "color":"Beige", 
+            "size":{
+                "UK":[3,4,5,6,7,8]
+            },
+            "picture":"https://images.asos-media.com/products/simmi-london-asymmetric-clear-detail-mules/13499827-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":12, 
+    "brand":"TOMS", 
+    "model":"ALPARGATA SLIP-ON", 
+    "type":"Espadrille", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":60.01,
+                "currency":"USD"
+            },
+            "color":"Grey", 
+            "size":{
+                "UK":[3,4,5,6]
+            },
+            "picture":"https://images.asos-media.com/products/toms-alpargata-flat-slip-on-shoes-in-grey/12785344-2?$XXL$&wid=513&fit=constrain"
+        },
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":48.16,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[3,4,5,6,7,8]
+            },
+            "picture":"https://images.asos-media.com/products/toms-alpargata-recycled-flat-slip-on-shoes-in-washed-black/12785455-1-black001?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":13, 
+    "brand":"Vans", 
+    "model":"Anaheim Classic Slip-On", 
+    "type":"Plimsoll", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":102.64,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[6,7]
+            },
+            "picture":"https://images.asos-media.com/products/vans-anaheim-classic-slip-on-plimsolls-in-black/12767540-4?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":14, 
+    "brand":"Birkenstock", 
+    "model":"Arizona EVA", 
+    "type":"Sandals", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":55.27,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[7,8,9,11],
+                "EU":[41,42,43,46]
+            },
+            "picture":"https://images.asos-media.com/products/birkenstock-arizona-eva-sandals-in-black/10185101-1-black?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":15, 
+    "brand":"Birkenstock", 
+    "model":"Arizona Eva Black Flat", 
+    "type":"Sandals", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":37.90,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "EU":[36,37]
+            },
+            "picture":"https://images.asos-media.com/products/birkenstock-arizona-eva-black-flat-sandals/9974994-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":16, 
+    "brand":"Vans", 
+    "model":"Authentic", 
+    "type":"Plimsoll", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":49.74,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "US":[11.5],
+                "UK":[10.5],
+                "EU":[45]
+            },
+            "picture":"https://images.asos-media.com/products/vans-authentic-plimsolls-in-black/11640013-4?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":17, 
+    "brand":"Polo Ralph Lauren", 
+    "model":"Barron Espadrille", 
+    "type":"Plimsoll", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":118.43,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[9,12]
+            },
+            "picture":"https://images.asos-media.com/products/polo-ralph-lauren-barron-espadrille-with-multi-polo-player-in-washed-black/11605640-2?$XXL$&wid=513&fit=constrain"
+        },
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":118.43,
+                "currency":"USD"
+            },
+            "color":"Navy", 
+            "size":{
+                "UK":[9]
+            },
+            "picture":"https://images.asos-media.com/products/polo-ralph-lauren-barron-espadrille-with-multi-polo-player-in-washed-navy/11605624-4?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":18, 
+    "brand":"Polo Ralph Lauren", 
+    "model":"Baryson Suede Chelsea Boots", 
+    "type":"Chelsea Boots", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":260.55,
+                "currency":"USD"
+            },
+            "color":"Brown", 
+            "size":{
+                "UK":[8,9,10]
+            },
+            "picture":"https://images.asos-media.com/products/polo-ralph-lauren-baryson-suede-chelsea-boot-in-brown/13076021-3?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":19, 
+    "brand":"Lamoda", 
+    "model":"Black Oxford", 
+    "type":"Oxford", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":50.53,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[3,4,5,6,7,8]
+            },
+            "picture":"https://images.asos-media.com/products/lamoda-black-oxford-shoes/12818901-3?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":20, 
+    "brand":"Glamorous", 
+    "model":"Black Patent Barely There Block Heels", 
+    "type":"Heeled", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":30.96,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[3,6,7]
+            },
+            "picture":"https://cdn.shopify.com/s/files/1/0265/1760/2401/products/fw1898_blackpatent_03_768x.jpg?v=1571383972"
+        }
+    ]
+},
+{
+    "id":21, 
+    "brand":"New Look", 
+    "model":"Black Patent Stud Trim Chunky Loafers", 
+    "type":"Loafers", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":36.48,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[4,5,6,7,8,9],
+                "EU":[37,38,39,40,41,42]
+            },
+            "picture":"https://media2.newlookassets.com/i/newlook/638828601D2/womens/footwear/shoes/black-patent-stud-trim-chunky-loafers.jpg?strip=true&qlt=80&w=720"
+        }
+    ]
+},
+{
+    "id":22, 
+    "brand":"Glamorous", 
+    "model":"Blush Shimmer Barely There Block Heels", 
+    "type":"Heeled", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":30.96,
+                "currency":"USD"
+            },
+            "color":"Pink", 
+            "size":{
+                "UK":[3,4,5,6,7]
+            },
+            "picture":"https://cdn.shopify.com/s/files/1/0265/1760/2401/products/fw1898-2_copy_600x.jpg?v=1571385636"
+        }
+    ]
+},
+{
+    "id":23, 
+    "brand":"Jack & Jones", 
+    "model":"Canvas", 
+    "type":"Plimsoll", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":55.27,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[6,7,8,9,10]
+            },
+            "picture":"https://images.asos-media.com/products/jack-jones-canvas-plimsolls-in-black/13820973-4?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":24, 
+    "brand":"Converse", 
+    "model":"Chuck 70 High Top", 
+    "type":"Trainers", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":93.96,
+                "currency":"USD"
+            },
+            "color":"Pink", 
+            "size":{
+                "UK":[7,8.5,9,10,10.5,11,12]
+            },
+            "picture":"https://images.asos-media.com/products/converse-chuck-70-trainers-in-pink/12368233-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":25, 
+    "brand":"Converse", 
+    "model":"Chuck Taylor All Star", 
+    "type":"Plimsoll", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":60.01,
+                "currency":"USD"
+            },
+            "color":"Monoblack", 
+            "size":{
+                "US":[6.5]
+            },
+            "picture":"https://images.asos-media.com/products/converse-all-star-hi-plimsolls-in-black-m3310c/11528065-1-black?$XXL$&wid=513&fit=constrain"
+        },
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":86.85,
+                "currency":"USD"
+            },
+            "color":"Navy", 
+            "size":{
+                "US":[5,6,7.5,8,8.5,9,9.5,10,11,11.5],
+                "UK":[5,6,7.5,8,8.5,9,9.5,10,11,11.5],
+                "EU":[37.5,39,41,41.5,42,42.5,43,44,45,46]
+            },
+            "picture":"https://images.asos-media.com/products/converse-all-star-hi-plimsolls-in-navy-m9622c/8901070-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":26, 
+    "brand":"Converse", 
+    "model":"Chuck Taylor All Star leather", 
+    "type":"Plimsoll", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":102.64,
+                "currency":"USD"
+            },
+            "color":"White", 
+            "size":{
+                "UK":[4,5.5,6.5,7.5,8.5,9,10,10.5,11,12,13]
+            },
+            "picture":"https://images.asos-media.com/products/converse-chuck-taylor-all-star-leather-plimsolls-in-white/12368235-3?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":27, 
+    "brand":"Converse", 
+    "model":"Chuck Taylor All-Star 70s Hi Gore-tex", 
+    "type":"Trainers", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":105.01,
+                "currency":"USD"
+            },
+            "color":"Orange", 
+            "size":{
+                "UK":[4,4.5,5,5.5,6,6.5,7,7.5,8,8.5,9,9.5,10,10.5,11,11.5,12,12.5,13]
+            },
+            "picture":"https://images.asos-media.com/products/converse-chuck-taylor-all-star-70-waterproof-hi-trainers-in-orange-162351c/10978616-4?$XXL$&wid=513&fit=constrain"
+        },
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":110.54,
+                "currency":"USD"
+            },
+            "color":"Green", 
+            "size":{
+                "UK":[7,7.5]
+            },
+            "picture":"https://images.asos-media.com/products/vans-sk8-hi-trainers-in-green-vn0a38geukv1/10747525-1-green?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":28, 
+    "brand":"Monki", 
+    "model":"Classic Ankle Boots", 
+    "type":"Ankle Boots", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":71.06,
+                "currency":"USD"
+            },
+            "color":"Yellow", 
+            "size":{
+                "US":[7],
+                "UK":[3.5,6,6.5],
+                "EU":[36,38,39,40]
+            },
+            "picture":"https://images.asos-media.com/products/monki-croc-print-ankle-boots-in-mustard/13591893-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":29, 
+    "brand":"TOMS", 
+    "model":"Classic Espadrilles", 
+    "type":"Espadrille", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":56.85,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[7,7.5,8,8.5,9,9.5,10,11,12]
+            },
+            "picture":"https://images.asos-media.com/products/toms-classic-espadrilles-in-double-black/11301984-1-black?$XXL$&wid=513&fit=constrain"
+        },
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":57.85,
+                "currency":"USD"
+            },
+            "color":"Navy", 
+            "size":{
+                "UK":[6,7,7.5,9.5]
+            },
+            "picture":"https://images.asos-media.com/products/toms-classic-espadrilles-in-navy-canvas/9388487-2?$XXL$&wid=513&fit=constrain"
+        },
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":58.85,
+                "currency":"USD"
+            },
+            "color":"Brown", 
+            "size":{
+                "UK":[6,7,7.5,9,9.5,10,10.5,11,12]
+            },
+            "picture":"https://images.asos-media.com/products/toms-classic-espadrilles-in-brown-canvas/9387872-2?$XXL$&wid=513&fit=constrain"
+        },
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":59.85,
+                "currency":"USD"
+            },
+            "color":"Grey", 
+            "size":{
+                "UK":[6,7]
+            },
+            "picture":"https://images.asos-media.com/products/toms-espadrilles-in-grey-linen-with-rope-detail/9387890-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":30, 
+    "brand":"Vans", 
+    "model":"Classic Slip-On", 
+    "type":"Plimsoll", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":82.11,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[7,8,9,9.5,10,11,12]
+            },
+            "picture":"https://images.asos-media.com/products/vans-classic-slip-on-plimsolls-in-black/12234790-1-black?$XXL$&wid=513&fit=constrain"
+        },
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":65.53,
+                "currency":"USD"
+            },
+            "color":"White", 
+            "size":{
+                "UK":[3,4,5,6,7,8,9]
+            },
+            "picture":"https://images.asos-media.com/products/vans-classic-slip-on-triple-white-trainers/11913232-3?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":31, 
+    "brand":"Glamorous", 
+    "model":"Clear Black Jelly Two Strap Flat Sandal", 
+    "type":"Sandals", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":15.00,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "US":[],
+                "UK":[3,4,5,6],
+                "EU":[]
+            },
+            "picture":"https://images.asos-media.com/products/glamorous-clear-black-jelly-two-strap-flat-sandal/11786972-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":32, 
+    "brand":"Dr. Martens", 
+    "model":"COMBS TECH", 
+    "type":"Military Boots", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":156.33,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[5,6,7]
+            },
+            "picture":"https://images.asos-media.com/products/dr-martens-combs-tech-boot-in-black/12683673-1-black?$XXL$&wid=513&fit=constrain"
+        },
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":156.33,
+                "currency":"USD"
+            },
+            "color":"Green", 
+            "size":{
+                "UK":[6,7,8,9]
+            },
+            "picture":"https://images.asos-media.com/products/dr-martens-combs-tech-boot-in-khaki/12683341-3?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":33, 
+    "brand":"ASOS DESIGN", 
+    "model":"Dexter Slip-On", 
+    "type":"Plimsoll", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":12.63,
+                "currency":"USD"
+            },
+            "color":"Green", 
+            "size":{
+                "UK":[2,3,4,5,6,7,8,9]
+            },
+            "picture":"https://images.asos-media.com/products/asos-design-dexter-slip-on-plimsolls-in-blue/12854958-2?$XXL$&wid=513&fit=constrain"
+        },
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":15.79,
+                "currency":"USD"
+            },
+            "color":"Grey", 
+            "size":{
+                "UK":[2,3,4,5,6,7,8,10]
+            },
+            "picture":"https://images.asos-media.com/products/asos-design-dexter-slip-on-plimsolls-in-grey/11057318-4?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":34, 
+    "brand":"Dr. Martens", 
+    "model":"Dr. Martens x Lazy Oaf Buckle Creeper", 
+    "type":"Brogue", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":213.18,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[5,6,7,8,9]
+            },
+            "picture":"https://images.asos-media.com/products/dr-martens-x-lazy-oaf-creeper-chunky-shoe-in-black/11367573-4?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":35, 
+    "brand":"Skechers", 
+    "model":"Energy Wavey", 
+    "type":"Trainers", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":101.06,
+                "currency":"USD"
+            },
+            "color":"White", 
+            "size":{
+                "UK":[3,4,5,6,7,8]
+            },
+            "picture":"https://images.asos-media.com/products/skechers-energy-wavey-trainers-in-white/12132851-1-wnt?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":36, 
+    "brand":"Vans", 
+    "model":"Era TC", 
+    "type":"Plimsoll", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":75.80,
+                "currency":"USD"
+            },
+            "color":"Red", 
+            "size":{
+                "UK":[4,4.5,5,5.5,6,6.5,7,7.5,8,8.5,9,9.5,10,10.5,11,11.5,12,12.5,13],
+            },
+            "picture":"https://images.asos-media.com/products/vans-era-tc-plimsolls-in-red/12825776-3?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":37, 
+    "brand":"ASOS DESIGN", 
+    "model":"Fairgame Leather Embellished Flat Sandals", 
+    "type":"Sandals", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":27.63,
+                "currency":"USD"
+            },
+            "color":"Sliver", 
+            "size":{
+                "UK":[2,9,10]
+            },
+            "picture":"https://images.asos-media.com/products/asos-design-fairgame-leather-embellished-flat-sandals/10945508-3?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":38, 
+    "brand":"Fila", 
+    "model":"Fast Charge", 
+    "type":"Trainers", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":94.75,
+                "currency":"USD"
+            },
+            "color":"White", 
+            "size":{
+                "UK":[3,4,5,6,7,8]
+            },
+            "picture":"https://images.asos-media.com/products/fila-fast-charge-trainer-with-logo-straps-in-white/13543197-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":39, 
+    "brand":"New Look", 
+    "model":"Faux Leather", 
+    "type":"Boat Shoes", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":44.20,
+                "currency":"USD"
+            },
+            "color":"Tan", 
+            "size":{
+                "UK":[7,8,9]
+            },
+            "picture":"https://images.asos-media.com/products/new-look-faux-leather-boat-shoes-in-tan/11292611-1-tan?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":40, 
+    "brand":"New Look", 
+    "model":"Faux Leather Chelsea Boots", 
+    "type":"Chelsea Boots", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":47.36,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[7,8,9,10,11]
+            },
+            "picture":"https://images.asos-media.com/products/new-look-faux-leather-chelsea-boot-in-black/12314286-1-black?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":41, 
+    "brand":"Jack & Jones", 
+    "model":"Faux Leather Desert Boots", 
+    "type":"Desert Boots", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":94.75,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[6,7,8,9,10,11,12]
+            },
+            "picture":"https://images.asos-media.com/products/jack-jones-faux-leather-desert-boots-in-black/12700746-4?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":42, 
+    "brand":"New Look", 
+    "model":"Faux Suede Desert Boots", 
+    "type":"Desert Boots", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":47.36,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[7,8,9,11]
+            },
+            "picture":"https://images.asos-media.com/products/new-look-faux-suede-desert-boot-in-black/12314276-3?$XXL$&wid=513&fit=constrain"
+        },
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":47.36,
+                "currency":"USD"
+            },
+            "color":"Tan", 
+            "size":{
+                "UK":[7,8,9,10,11]
+            },
+            "picture":"https://images.asos-media.com/products/new-look-faux-suede-desert-boot-in-tan/12314314-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":43, 
+    "brand":"Fila", 
+    "model":"Fila Disruptor", 
+    "type":"Trainers", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":126.33,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[3,4,5,6,7,8]
+            },
+            "picture":"https://images.asos-media.com/products/fila-disruptor-trainers-in-black/13970193-1-black?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id": 44,
+    "brand": "New Look",
+    "model": "Formal Brogues",
+    "type": "Brogue",
+    "detail": [
+        {
+            "gender": "Male",
+            "price": {
+                "amount": 36.30,
+                "currency": "USD"
+            },
+            "color": "Tan",
+            "size": {
+                "UK": [8]
+            },
+            "picture": "https://images.asos-media.com/products/new-look-formal-brogues-in-tan/11749060-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id": 45, 
+    "brand":"ASOS DESIGN", 
+    "model":"Fruity Jelly Flat Sandals In Clear", 
+    "type":"Sandals", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount": 15,
+                "currency":"USD"
+            },
+            "color":"Clear", 
+            "size":{
+                "UK":[3,4,5,6,7,8,9]
+            },
+            "picture":"https://images.asos-media.com/products/asos-design-fruity-jelly-flat-sandals-in-clear/12379566-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id": 46, 
+    "brand": "Fred Perry", 
+    "model": "George Cox Tassel Loafer", 
+    "type": "Loafers", 
+    "detail":[
+        {
+            "gender": "Male", 
+            "price":{
+                "amount": 213.18,
+                "currency":"USD"
+            },
+            "color": "Black", 
+            "size":{
+                "UK": [6,7,8,9,10,11,12]
+            },
+            "picture": "https://images.asos-media.com/products/fred-perry-george-cox-tassle-leather-loafers-in-black/10129182-1-black?$XXL$&wid=513&fit=constrain"
+        },
+        {
+            "gender": "Male",
+            "price": {
+                "amount": 213.18,
+                "currency": "USD"
+            },
+            "color": "Red",
+            "size": {
+                "UK": [6,7,8,9,10,11,12]
+            },
+            "picture": "https://images.asos-media.com/products/fred-perry-george-cox-loafers-in-oxblood/12852733-4?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id": 47,
+    "brand": "Dr. Martens",
+    "model": "GERALDO BRANDO",
+    "type": "Sandals",
+    "detail": [
+        {
+            "gender": "Male",
+            "price": {
+                "amount": 219.49,
+                "currency": "USD"
+            },
+            "color": "Black",
+            "size": {
+                "UK": [7,8,10,11,12,13]
+            },
+            "picture": "https://images.asos-media.com/products/dr-martens-geraldo-ankle-strap-sandals-in-black/9125735-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id": 48,
+    "brand": "Topshop",
+    "model": "Heeled Croc Pointed Boots",
+    "type": "Ankle Boots",
+    "detail": [
+        {
+            "gender": "Female",
+            "price": {
+                "amount": 93.17,
+                "currency": "USD"
+            },
+            "color": "Red",
+            "size": {
+                "UK": [3,4,5,6]
+            },
+            "picture": "https://images.asos-media.com/products/topshop-heeled-croc-pointed-boots-in-burgundy/13505548-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id": 49,
+    "brand": "ASOS DESIGN",
+    "model": "Jual Espadrilles",
+    "type": "Espadrille",
+    "detail": [
+        {
+            "gender": "Female",
+            "price": {
+                "amount": 18.95,
+                "currency": "USD"
+            },
+            "color": "Black",
+            "size": {
+                "UK": [3,4,5,6,7,8,9]
+            },
+            "picture": "https://images.asos-media.com/products/asos-design-jual-espadrilles-in-black/12704070-2?$XXL$&wid=513&fit=constrain"
+        },
+        {
+            "gender": "Female",
+            "price": {
+                "amount": 15,
+                "currency": "USD"
+            },
+            "color": "Blue",
+            "size": {
+                "UK": [3,4,5,6,7,8,9,10]
+            },
+            "picture": "https://images.asos-media.com/products/asos-design-jual-espadrilles-in-blue-stripe/12704310-3?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id": 50,
+    "brand": "Dr. Martens",
+    "model": "KELVIN II SMOOTH",
+    "type": "Brogue",
+    "detail": [
+        {
+            "gender": "Male",
+            "price": {
+                "amount": 187.91,
+                "currency": "USD"
+            },
+            "color": "Black",
+            "size": {
+                "UK": [5,6,7,8,9,10,11,12,13]
+            },
+            "picture": "https://images.asos-media.com/products/dr-martens-kelvin-brogues-in-black-polished-smooth/12684961-3?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id": 51,
+    "brand": "Kickers",
+    "model": "Kick Hi Creepy",
+    "type": "Ankle Boots",
+    "detail": [
+        {
+            "gender": "Female",
+            "price": {
+                "amount": 120.01,
+                "currency": "USD"
+            },
+            "color": "Pink",
+            "size": {
+                "UK": [3,4,5,6,8]
+            },
+            "picture": "https://images.asos-media.com/products/kickers-kick-hi-creepy-light-pink-suede-and-leather-hi-top-flat-boots/12031575-4?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id": 52,
+    "brand": "RAID",
+    "model": "Kola White Ankle Boots",
+    "type": "Ankle Boots",
+    "detail": [
+        {
+            "gender": "Female",
+            "price": {
+                "amount": 47.36,
+                "currency": "USD"
+            },
+            "color": "White",
+            "size": {
+                "UK": [3,4,5,6,7,8,9]
+            },
+            "picture": "https://images.asos-media.com/products/raid-kola-white-ankle-boots/12035608-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id": 53,
+    "brand": "ASOS DESIGN",
+    "model": "Korey Heeled Thigh High Boots",
+    "type": "Heeled",
+    "detail": [
+        {
+            "gender": "Female",
+            "price": {
+                "amount": 56.85,
+                "currency": "USD"
+            },
+            "color": "Black",
+            "size": {
+                "UK": [2,3,4,5,6,7,8,9,10]
+            },
+            "picture": "https://images.asos-media.com/products/asos-design-korey-heeled-thigh-high-boots-in-black/12262871-3?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id": 54,
+    "brand": "Jack & Jones",
+    "model": "LEATHER BOOTS",
+    "type": "Military Boots",
+    "detail": [
+        {
+            "gender": "Male",
+            "price": {
+                "amount": 110.54,
+                "currency": "USD"
+            },
+            "color": "Black",
+            "size": {
+                "UK": [6]
+            },
+            "picture": "https://images.asos-media.com/products/jack-jones-lace-up-leather-boot-in-black/12512289-1-anthracite?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id": 55,
+    "brand": "Tommy Hilfiger",
+    "model": "Leather Chelsea Boots",
+    "type": "Chelsea Boots",
+    "detail": [
+        {
+            "gender": "Male",
+            "price": {
+                "amount": 221.07,
+                "currency": "USD"
+            },
+            "color": "Brown",
+            "size": {
+                "UK": [6.5,7,10,10.5]
+            },
+            "picture": "https://images.asos-media.com/products/tommy-hilfiger-leather-chelsea-boot-in-brown/13107382-4?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id": 56,
+    "brand": "ASOS DESIGN",
+    "model": "Majority Chunky Brogue",
+    "type": "Brogue",
+    "detail": [
+        {
+            "gender": "Female",
+            "price": {
+                "amount": 47.37,
+                "currency": "USD"
+            },
+            "color": "Green",
+            "size": {
+                "UK": [3,4,5,6,7,8,9]
+            },
+            "picture": "https://images.asos-media.com/products/asos-design-majority-chunky-brogue-in-green/12468567-1-forestgreen?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id": 57,
+    "brand": "Superdry",
+    "model": "Meteora Chelsea Boots",
+    "type": "Chelsea Boots",
+    "detail": [
+        {
+            "gender": "Male",
+            "price": {
+                "amount": 110.52,
+                "currency": "USD"
+            },
+            "color": "Brown",
+            "size": {
+                "UK": [7,8,9,10,11,12]
+            },
+            "picture": "https://images.asos-media.com/products/superdry-meteora-chelsea-boots-in-brown/14162940-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id": 58,
+    "brand": "Birkenstock",
+    "model": "Milano Birko-flor",
+    "type": "Sandals",
+    "detail": [
+        {
+            "gender": "Male",
+            "price": {
+                "amount": 102.64,
+                "currency": "USD"
+            },
+            "color": "Brown",
+            "size": {
+                "UK": [7,8,9,10,11],
+                "EU": [41,42,43,44,45,46]
+            },
+            "picture": "https://images.asos-media.com/products/birkenstock-milano-birko-flor-sandals-in-dark-brown/11255229-1-brown?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id": 59,
+    "brand": "Polo Ralph Lauren",
+    "model": "Millard Suede Slip-On",
+    "type": "Boat Shoes",
+    "detail": [
+        {
+            "gender": "Male",
+            "price": {
+                "amount": 187.91,
+                "currency": "USD"
+            },
+            "color": "Tan",
+            "size": {
+                "UK": [12]
+            },
+            "picture": "https://images.asos-media.com/products/polo-ralph-lauren-millard-suede-slip-on-boat-shoes-in-tan/11433773-1-snuff?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id": 60,
+    "brand": "ASOS DESIGN",
+    "model": "More Flat Lace Up",
+    "type": "Brogue",
+    "detail": [
+        {
+            "gender": "Female",
+            "price": {
+                "amount": 39.48,
+                "currency": "USD"
+            },
+            "color": "Black",
+            "size": {
+                "UK": [3,4,5,6,7,8,9]
+            },
+            "picture": "https://images.asos-media.com/products/asos-design-more-flat-lace-up-shoes-in-black/11201532-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id": 61,
+    "brand": "Glamorous",
+    "model": "Mustard Rectangle Heel Faux Suede Heels",
+    "type": "Heeled",
+    "detail": [
+        {
+            "gender": "Female",
+            "price": {
+                "amount": 35.39,
+                "currency": "USD"
+            },
+            "color": "Yellow",
+            "size": {
+                "UK": [3,5,6]
+            },
+            "picture": "https://cdn.shopify.com/s/files/1/0265/1760/2401/products/fw5899-mustard-03_768x.jpg?v=1571385137"
+        }
+    ]
+},
+{
+    "id": 62,
+    "brand": "ASOS DESIGN",
+    "model": "Nova Barely There Heeled Sandals",
+    "type": "Heeled",
+    "detail": [
+        {
+            "gender": "Female",
+            "price": {
+                "amount": 25.27,
+                "currency": "USD"
+            },
+            "color": "Beige",
+            "size": {
+                "UK": [2,3,4,5,6,7,8,9,10]
+            },
+            "picture": "https://images.asos-media.com/products/asos-design-nova-barely-there-heeled-sandals-in-beige/13025004-4?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id": 63,
+    "brand": "Jack & Jones",
+    "model": "Nubuck Leather",
+    "type": "Ankle Boots",
+    "detail": [
+        {
+            "gender": "Male",
+            "price": {
+                "amount": 110.54,
+                "currency": "USD"
+            },
+            "color": "Brown",
+            "size": {
+                "UK": [7,8,9,10,11,12]
+            },
+            "picture": "https://images.asos-media.com/products/jack-jones-nubuck-leather-boots-in-brown/12700609-4?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":64, 
+    "brand":"ASOS DESIGN", 
+    "model":"Nutshell Platform Barely There Heeled Sandals", 
+    "type":"Heeled", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":44.21,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[2,3,4,5,6,7,8,9]
+            },
+            "picture":"https://images.asos-media.com/products/asos-design-nutshell-platform-barely-there-heeled-sandals-in-black/12349616-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":65, 
+    "brand":"Vans", 
+    "model":"Old Skool", 
+    "type":"Trainers", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":102.64,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[3,4,5,6,7,8,9]
+            },
+            "picture":"https://images.asos-media.com/products/vans-old-skool-trainers-in-green-white/13947173-4?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":66, 
+    "brand":"Adidas", 
+    "model":"Originals Continental Vulc", 
+    "type":"Trainers", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":86.85,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[4,4.5,5,5.5,6,6.5,7,7.5,8,8.5,9,9.5,10,10.5,11,11.5,12,12.5,13],
+            },
+            "picture":"https://images.asos-media.com/products/adidas-originals-continental-vulc-trainers-in-black/12399668-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":67, 
+    "brand":"Adidas", 
+    "model":"Originals EQT Gazelle", 
+    "type":"Chunky", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":110.00,
+                "currency":"USD"
+            },
+            "color":"White", 
+            "size":{
+                "UK":[5.5]
+            },
+            "picture":"https://images.asos-media.com/products/adidas-originals-eqt-gazelle-trainers-in-triple-white/12269532-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":68, 
+    "brand":"Adidas", 
+    "model":"Originals Falcon Cord", 
+    "type":"Trainers", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":134.22,
+                "currency":"USD"
+            },
+            "color":"Pink", 
+            "size":{
+                "UK":[3,4,5,6,7,8,9]
+            },
+            "picture":"https://images.asos-media.com/products/adidas-originals-falcon-cord-trainers-in-pink/12884594-1-pink?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":69, 
+    "brand":"New Look", 
+    "model":"Pointed Block Heeled Boots", 
+    "type":"Ankle Boots", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":34.74,
+                "currency":"USD"
+            },
+            "color":"Grey", 
+            "size":{
+                "UK":[4,5,6,7,8,9]
+            },
+            "picture":"https://images.asos-media.com/products/new-look-pointed-block-heeled-boots-in-mid-grey-croc/12647636-3?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":70, 
+    "brand":"Jack & Jones", 
+    "model":"PU Chelsea Boots", 
+    "type":"Chelsea Boots", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":78.96,
+                "currency":"USD"
+            },
+            "color":"Brown", 
+            "size":{
+                "UK":[7,8,9,12]
+            },
+            "picture":"https://images.asos-media.com/products/jack-jones-pu-chelsea-boot-in-brown/13303680-1-java?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":71, 
+    "brand":"Superdry", 
+    "model":"Ripley Lace Up", 
+    "type":"Ankle Boots", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":157.89,
+                "currency":"USD"
+            },
+            "color":"Brown", 
+            "size":{
+                "UK":[7,8,9,10,11,12]
+            },
+            "picture":"https://images.asos-media.com/products/superdry-ripley-lace-up-boots-in-brown/13152147-3?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":72, 
+    "brand":"Skechers", 
+    "model":"Shindigs 7 eye Hiker Boot", 
+    "type":"Ankle Boots", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":124.75,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[3,4,5,6,7,8]
+            },
+            "picture":"https://images.asos-media.com/products/skechers-shindigs-7-eye-hiker-boot/12132865-4?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":73, 
+    "brand":"Dr. Martens", 
+    "model":"SINCLAIR PLATFORM BOOTS", 
+    "type":"Ankle Boots", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":282.66,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[7,8,9]
+            },
+            "picture":"https://images.asos-media.com/products/dr-martens-sinclair-black-leather-zip-chunky-flatform-boots/9644714-3?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":74, 
+    "brand":"TOMS", 
+    "model":"Slip-On", 
+    "type":"Boat Shoes", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":86.85,
+                "currency":"USD"
+            },
+            "color":"Grey", 
+            "size":{
+                "UK":[6]
+            },
+            "picture":"https://images.asos-media.com/products/toms-boat-shoes-in-grey/11301985-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":75, 
+    "brand":"Polo Ralph Lauren", 
+    "model":"Talan Leather Chelsea Boots", 
+    "type":"Chelsea Boots", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":187.91,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[7,8,9]
+            },
+            "picture":"https://images.asos-media.com/products/polo-ralph-lauren-talan-leather-chelsea-boot-in-black/13076019-4?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":76, 
+    "brand":"Polo Ralph Lauren", 
+    "model":"Talan Suede Chukka Boots", 
+    "type":"Chukka Boots", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":172.12,
+                "currency":"USD"
+            },
+            "color":"Beige", 
+            "size":{
+                "UK":[6,7,8,9,10,11]
+            },
+            "picture":"https://images.asos-media.com/products/polo-ralph-lauren-talan-suede-chukka-boot-in-beige/13076027-4?$XXL$&wid=513&fit=constrain"
+        },
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":137.38,
+                "currency":"USD"
+            },
+            "color":"Navy", 
+            "size":{
+                "UK":[6,7,8,9,10,11,12]
+            },
+            "picture":"https://images.asos-media.com/products/polo-ralph-lauren-talan-suede-chukka-boot-in-navy/13076043-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":77, 
+    "brand":"ASOS DESIGN", 
+    "model":"Trainer Sandals", 
+    "type":"Sandals", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":39.48,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[6,7,8,9,10,11,12]
+            },
+            "picture":"https://images.asos-media.com/products/asos-design-trainer-sandals-in-mixed-materials/12406235-1-black?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":78, 
+    "brand":"Vans", 
+    "model":"Vans X Harry Potter Hufflepuff Slip-On", 
+    "type":"Trainers", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":90.01,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[3,4]
+            },
+            "picture":"https://images.asos-media.com/products/vans-x-harry-potter-hufflepuff-slip-on-brown-trainers/11903743-1-black?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":79, 
+    "brand":"Dr. Martens", 
+    "model":"Vegan 1461", 
+    "type":"Derby", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":187.91,
+                "currency":"USD"
+            },
+            "color":"Red", 
+            "size":{
+                "UK":[6]
+            },
+            "picture":"https://images.asos-media.com/products/dr-martens-vegan-1461-3-eye-shoes-in-red/9671279-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":80, 
+    "brand":"Dr. Martens", 
+    "model":"Vegan 1462", 
+    "type":"Derby", 
+    "detail":[
+        {
+            "gender":"Male", 
+            "price":{
+                "amount":187.91,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[6,7,8,9,10,11,12,13]
+            },
+            "picture":"https://images.asos-media.com/products/dr-martens-vegan-1461-3-eye-shoes-in-black/9039115-3?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":81, 
+    "brand":"Dr. Martens", 
+    "model":"Voss black Leather Flat Chunky Sandals", 
+    "type":"Sandals", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":140.54,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[3,4,5,6,7,8,9]
+            },
+            "picture":"https://images.asos-media.com/products/dr-martens-voss-black-leather-flat-chunky-sandals/9148743-2?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":82, 
+    "brand":"ASOS DESIGN", 
+    "model":"Wide Fit Membership Loafer Flat Shoes", 
+    "type":"Loafers", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":34.74,
+                "currency":"USD"
+            },
+            "color":"Tan", 
+            "size":{
+                "UK":[2,3,4,5,6,7,8,9]
+            },
+            "picture":"https://images.asos-media.com/products/asos-design-wide-fit-membership-loafer-flat-shoes-in-tan-croc/12819881-3?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":83, 
+    "brand":"RAID", 
+    "model":"Wide Fit Venus Chunky Flat Shoes", 
+    "type":"Loafers", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":47.36,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[3,4,5,6,7,8,9]
+            },
+            "picture":"https://images.asos-media.com/products/raid-wide-fit-venus-chunky-flat-shoes-in-black/13437948-1-blackpu?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+},
+{
+    "id":84, 
+    "brand":"Converse", 
+    "model":"Winter GORE-TEX Lugged Chuck Taylor All Star Boot", 
+    "type":"Ankle Boots", 
+    "detail":[
+        {
+            "gender":"Female", 
+            "price":{
+                "amount":142.12,
+                "currency":"USD"
+            },
+            "color":"Black", 
+            "size":{
+                "UK":[3,3.5,4,4.5,5.5,6,6.5,7,7.5,8,8.5]
+            },
+            "picture":"https://images.asos-media.com/products/converse-goretex-leather-chuck-taylor-hi-chunky-sole-hiker-boots-in-black/13569404-3?$XXL$&wid=513&fit=constrain"
+        }
+    ]
+}])
