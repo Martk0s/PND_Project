@@ -28,7 +28,7 @@
             echo "<div class='card'><div class='card-body'>";
             echo "Brand : ". $row->brand . "<br>";
             echo "Model : ". $row->model . "<br>";
-            echo "</div></div>"
+            echo "</div></div>";
         }
     }
     
