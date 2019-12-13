@@ -21,7 +21,7 @@
 
     $conn = new MongoDB\Driver\Manager("mongodb://localhost:27017");
     $query = new MongoDB\Driver\Query([]);
-    $rows = $conn->executeQuery("PND_Project.shoe", $query);
+    $rows = $conn->executeQuery("PND_Project.shoes", $query);
 
     if (isset($_POST['submit'])){
         foreach ($rows as $row){
