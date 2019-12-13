@@ -15,7 +15,10 @@
 <body>
     <?php
         $conn = new MongoDB\Driver\Manager("mongodb://localhost:27017");
-        $query = new MongoDB\Driver\Query([]);
+        //$filter = ["brand"=>"New Balance"];
+        //$filter += ["detail.color"=>"Black"];
+        $filter = [];
+        $query = new MongoDB\Driver\Query($filter);
         $rows = $conn->executeQuery("PND_Project.shoes", $query);
 
         foreach ($rows as $row) {
@@ -39,7 +42,7 @@
                 if (property_exists($detail->size,"US")){
                     echo "<b>US &ensp;</b>";
                     foreach ($detail->size->US as $US) {
-                        echo $US . " ";
+                        echo $US . "&ensp;&ensp;";
                     }
                     echo "<br>";
                 }
@@ -53,7 +56,7 @@
                 if (property_exists($detail->size,"EU")){
                     echo "<b>EU &ensp;</b>";
                     foreach ($detail->size->EU as $EU) {
-                        echo $EU . " ";
+                        echo $EU . "&ensp;&ensp;";
                     }
                 }
                 echo "<div class='container'>";
