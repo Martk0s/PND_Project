@@ -10,6 +10,23 @@
         .shoes-image {
             width: 110%;
         }
+        
+        .id-no {
+            position: absolute;
+            right: 30;
+        }
+
+        .card-text {
+            color: rgb(100, 100, 100);
+        }
+        .update-btn {
+            position: absolute;
+            right: 100;
+        }
+        .delete-btn {
+            position: absolute;
+            right: 25;
+        }
     </style>
 </head>
 <body>
@@ -26,19 +43,21 @@
             echo "<div class='card'>";
             echo "<div class='row'>";
             echo "<div class='col-md-4'>";
+            $i = 0;
             foreach ($row->detail as $detail) {
                 echo "<img src='". $detail->picture . "' class='shoes-image'>"; 
             }
             echo "</div>";
             echo "<div class='col-md-8 px-3 py-3'>";
             echo "<div class='card-block px-3'>";
-            echo "<p style='text-align: right; color: rgb(200, 200, 200);'>ID: " . $row->id . "<br></p>";//debug
-            echo "<h3 class='card-title'>" . $row->brand . "</h3>";
+            echo "<p class='id-no' style='text-align: right; color: rgb(200, 200, 200);'>ID: " . $row->id . "<br></p>";//debug
+            echo "<h2 class='card-title'>" . $row->brand . "</h2>";
             echo "<p class='card-text'> <b>Model</b><br>&ensp;&ensp;" . $row->model . "<p>" ;
             echo "<p class='card-text'> <b>Type</b><br>&ensp;&ensp;" . $row->type . "<p>" ;
             echo "<hr>";
             foreach ($row->detail as $detail) {
                 echo "<p class='card-text'> <b>Gender</b><br>&ensp;&ensp;" . $detail->gender . "<p>" ;
+                echo "<p class='card-text'>";
                 if (property_exists($detail->size,"US")){
                     echo "<b>US &ensp;</b>";
                     foreach ($detail->size->US as $US) {
@@ -59,11 +78,12 @@
                         echo $EU . "&ensp;&ensp;";
                     }
                 }
+                echo "</p>";
                 echo "<div class='container'>";
                 echo "<div class='row'>";
                 echo "<p class='card-text'><b>Color&ensp;</b></p>";
                 echo "<div class='color-box " . $detail->color . "'></div>";
-                echo $detail->color;
+                echo "<p class='card-text'>" . $detail->color . "</p>";
                 echo "</div>";
                 echo "</div>";
                 foreach ($detail->price as $price) {
@@ -71,9 +91,27 @@
                 break;
                 }
                 if (count($row->detail) > 1) {
-                    echo "<hr>";
-                    echo "<br>";
-                    echo "<br>";    
+                    if (0 != $i) {
+                        echo "<br>";
+                        echo "<br>";
+                        echo "<br>";
+                        echo "<br>";
+                        echo "<br>";
+                        echo "<br>";
+                        echo "<br>";
+                        echo "<br>";
+                        echo "<br>";
+                    }
+                }
+                echo '<button type="button" class="btn btn-success update-btn">Update</button> <button type="button" class="btn btn-danger delete-btn">Delete</button>';
+                $i++;
+                if (count($row->detail) > 1) {
+                    if (count($row->detail) != $i) {
+                        echo "<br>";
+                        echo "<br>";
+                        echo "<br>";
+                        echo "<hr>";
+                    }
                 }
 
             }
