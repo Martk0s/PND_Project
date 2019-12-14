@@ -56,6 +56,7 @@
     }
 </style>
 <body>
+
     <!-- Scroll To Top Button -->
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-chevron-up"></i></button>
     <!-- END Scroll To Top Button -->
@@ -70,7 +71,7 @@
             <br><br>
             <label for="brand">Brand&ensp;:&ensp; </label>
             <select name='brand' id='brand' class="form-control" style="width: 180px; display: inline;">
-                <option value="">-- Show All --</option>
+                <option value="" >-- Show All --</option>
                 <option value="Converse">Converse</option>
                 <option value="Jack & Jones">Jack & Jones</option>
                 <option value="Vans">Vans</option>
@@ -156,13 +157,13 @@
                 <label for="Gender">Gender&ensp;:&ensp; </label>
                 <!-- MALE -->
                 <div class="custom-control custom-checkbox custom-control-inline">
-                    <input type="checkbox" class="custom-control-input" id="Male" checked>
+                    <input type="checkbox" class="custom-control-input" id="Male" id="Male" name="Male" value="Male">
                     <label class="custom-control-label" for="Male">Male</label>
                 </div>
 
                 <!-- FEMALE -->
                 <div class="custom-control custom-checkbox custom-control-inline">
-                    <input type="checkbox" class="custom-control-input" id="Female" checked>
+                    <input type="checkbox" class="custom-control-input" id="Female" name="Female" value="Female">
                     <label class="custom-control-label" for="Female">Female</label>
                 </div>
                 <!-- END GENDER -->
@@ -171,7 +172,7 @@
             <!-- BUTTON -->
             <br>
             <div class="row" style="margin-left: 100; margin-right: 100;">
-                <button type="button" class="btn btn-secondary btn-block"><i class="fas fa-filter"></i> Filter</i></button>
+                <button type="input" class="btn btn-secondary btn-block" name="filter"><i class="fas fa-filter"></i> Filter</i></button>
             </div>
             <!-- END BUTTON -->
             </div>
@@ -179,96 +180,119 @@
     </form>
     </div><!-- Container -->
     <hr style="width: 1200px;size: 4px;">
+
     <?php
-        $conn = new MongoDB\Driver\Manager("mongodb://localhost:27017");
-        //$filter = ["brand"=>"New Balance"];
-        //$filter += ["detail.color"=>"Black"];
         $filter = [];
-        $query = new MongoDB\Driver\Query($filter);
-        $rows = $conn->executeQuery("PND_Project.shoes", $query);
-
-        foreach ($rows as $row) {
-            echo "<div class='container py-3'>";
-            echo "<div class='card'>";
-            echo "<div class='row'>";
-            echo "<div class='col-md-4'>";
-            $i = 0;
-            foreach ($row->detail as $detail) {
-                echo "<img src='". $detail->picture . "' class='shoes-image'>"; 
+        if(isset($_POST['filter'])) {
+            if($_POST['brand'] != ""){
+                $filter += ["brand"=>$_POST['brand']];
             }
-            echo "</div>";
-            echo "<div class='col-md-8 px-3 py-3'>";
-            echo "<div class='card-block px-3'>";
-            echo "<p class='id-no' style='text-align: right; color: rgb(200, 200, 200);'>ID: " . $row->_id . "<br></p>";//debug
-            echo "<h2 class='card-title'>" . $row->brand . "</h2>";
-            echo "<p class='card-text'> <b>Model</b><br>&ensp;&ensp;" . $row->model . "<p>" ;
-            echo "<p class='card-text'> <b>Type</b><br>&ensp;&ensp;" . $row->type . "<p>" ;
-            echo "<hr>";
-            foreach ($row->detail as $detail) {
-                echo "<p class='card-text'> <b>Gender</b><br>&ensp;&ensp;" . $detail->gender . "<p>" ;
-                echo "<p class='card-text'>";
-                if (property_exists($detail->size,"US")){
-                    echo "<b>US &ensp;</b>";
-                    foreach ($detail->size->US as $US) {
-                        echo $US . "&ensp;&ensp;";
-                    }
-                    echo "<br>";
-                }
-                if (property_exists($detail->size,"UK")){
-                    echo "<b>UK &ensp;</b>";
-                    foreach ($detail->size->UK as $UK) {
-                        echo $UK . "&ensp;&ensp;";
-                    }
-                    echo "<br>";
-                }
-                if (property_exists($detail->size,"EU")){
-                    echo "<b>EU &ensp;</b>";
-                    foreach ($detail->size->EU as $EU) {
-                        echo $EU . "&ensp;&ensp;";
-                    }
-                }
-                echo "</p>";
-                echo "<div class='container'>";
+            
+            if($_POST['type'] != ""){
+                $filter += ["type"=>$_POST['type']];
+            }
+            
+            if($_POST['color'] != ""){
+                $filter += ["detail.color"=>$_POST['color']];
+            }
+            
+            error_reporting(~E_NOTICE );
+            if($_POST['Male'] != ""){
+                $filter += ["detail.gender"=>$_POST['Male']];
+            }
+            
+            if($_POST['Female'] != ""){
+                $filter += ["detail.gender"=>$_POST['Female']];
+            }
+
+            $conn = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+            $query = new MongoDB\Driver\Query($filter);
+            $rows = $conn->executeQuery("PND_Project.shoes", $query);
+    
+            foreach ($rows as $row) {
+                echo "<div class='container py-3'>";
+                echo "<div class='card'>";
                 echo "<div class='row'>";
-                echo "<p class='card-text'><b>Color&ensp;</b></p>";
-                echo "<div class='color-box " . $detail->color . "'></div>";
-                echo "<p class='card-text'>" . $detail->color . "</p>";
-                echo "</div>";
-                echo "</div>";
-                foreach ($detail->price as $price) {
-                    echo "<h4 style='color: #00a2e2;'>$ " . $price . "</h4>";
-                break;
+                echo "<div class='col-md-4'>";
+                $i = 0;
+                foreach ($row->detail as $detail) {
+                    echo "<img src='". $detail->picture . "' class='shoes-image'>"; 
                 }
-                if (count($row->detail) > 1) {
-                    if (0 != $i) {
-                        echo "<br>";
-                        echo "<br>";
-                        echo "<br>";
-                        echo "<br>";
-                        echo "<br>";
-                        echo "<br>";
-                        echo "<br>";
-                        echo "<br>";
+                echo "</div>";
+                echo "<div class='col-md-8 px-3 py-3'>";
+                echo "<div class='card-block px-3'>";
+                echo "<p class='id-no' style='text-align: right; color: rgb(200, 200, 200);'>ID: " . $row->_id . "<br></p>";//debug
+                echo "<h2 class='card-title'>" . $row->brand . "</h2>";
+                echo "<p class='card-text'> <b>Model</b><br>&ensp;&ensp;" . $row->model . "<p>" ;
+                echo "<p class='card-text'> <b>Type</b><br>&ensp;&ensp;" . $row->type . "<p>" ;
+                echo "<hr>";
+                foreach ($row->detail as $detail) {
+                    echo "<p class='card-text'> <b>Gender</b><br>&ensp;&ensp;" . $detail->gender . "<p>" ;
+                    echo "<p class='card-text'>";
+                    if (property_exists($detail->size,"US")){
+                        echo "<b>US &ensp;</b>";
+                        foreach ($detail->size->US as $US) {
+                            echo $US . "&ensp;&ensp;";
+                        }
                         echo "<br>";
                     }
-                }
-                echo '<button type="button" class="btn btn-success update-btn"><i class="fas fa-pencil-alt"></i> Update</button> <button type="button" class="btn btn-danger delete-btn"><i class="fas fa-trash-alt"></i> Delete</button>';
-                $i++;
-                if (count($row->detail) > 1) {
-                    if (count($row->detail) != $i) {
+                    if (property_exists($detail->size,"UK")){
+                        echo "<b>UK &ensp;</b>";
+                        foreach ($detail->size->UK as $UK) {
+                            echo $UK . "&ensp;&ensp;";
+                        }
                         echo "<br>";
-                        echo "<br>";
-                        echo "<br>";
-                        echo "<hr>";
                     }
+                    if (property_exists($detail->size,"EU")){
+                        echo "<b>EU &ensp;</b>";
+                        foreach ($detail->size->EU as $EU) {
+                            echo $EU . "&ensp;&ensp;";
+                        }
+                    }
+                    echo "</p>";
+                    echo "<div class='container'>";
+                    echo "<div class='row'>";
+                    echo "<p class='card-text'><b>Color&ensp;</b></p>";
+                    echo "<div class='color-box " . $detail->color . "'></div>";
+                    echo "<p class='card-text'>" . $detail->color . "</p>";
+                    echo "</div>";
+                    echo "</div>";
+                    foreach ($detail->price as $price) {
+                        echo "<h4 style='color: #00a2e2;'>$ " . $price . "</h4>";
+                    break;
+                    }
+                    if (count($row->detail) > 1) {
+                        if (0 != $i) {
+                            echo "<br>";
+                            echo "<br>";
+                            echo "<br>";
+                            echo "<br>";
+                            echo "<br>";
+                            echo "<br>";
+                            echo "<br>";
+                            echo "<br>";
+                            echo "<br>";
+                        }
+                    }
+                    echo '<button type="button" class="btn btn-success update-btn"><i class="fas fa-pencil-alt"></i> Update</button> 
+                    <button type="button" class="btn btn-danger delete-btn"><i class="fas fa-trash-alt"></i> Delete</button>';
+                    $i++;
+                    if (count($row->detail) > 1) {
+                        if (count($row->detail) != $i) {
+                            echo "<br>";
+                            echo "<br>";
+                            echo "<br>";
+                            echo "<hr>";
+                        }
+                    }
+    
                 }
-
+                echo "</div>";
+                echo "</div>";
+                echo "</div>";
+                echo "</div>";
+                echo "</div>";
             }
-            echo "</div>";
-            echo "</div>";
-            echo "</div>";
-            echo "</div>";
-            echo "</div>";
         }
     ?>
 
