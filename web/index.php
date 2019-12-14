@@ -59,6 +59,7 @@
 
     <!-- Scroll To Top Button -->
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-chevron-up"></i></button>
+    <a href="insert.php" title="Add New Record" class="float"><i class="fas fa-plus my-float"></i></a>
     <!-- END Scroll To Top Button -->
     <div class = "container-classa">
         <h4 class="head page-header"><br>SHOES</h4>
@@ -223,11 +224,11 @@
                 echo "<div class='card-block px-3'>";
                 echo "<p class='id-no' style='text-align: right; color: rgb(200, 200, 200);'>ID: " . $row->_id . "<br></p>";//debug
                 echo "<h2 class='card-title'>" . $row->brand . "</h2>";
-                echo "<p class='card-text'> <b>Model</b><br>&ensp;&ensp;" . $row->model . "<p>" ;
-                echo "<p class='card-text'> <b>Type</b><br>&ensp;&ensp;" . $row->type . "<p>" ;
+                echo "<p class='card-text'> <b>Model</b><br>&ensp;&ensp;" . $row->model . "</p>" ;
+                echo "<p class='card-text'> <b>Type</b><br>&ensp;&ensp;" . $row->type . "</p>" ;
                 echo "<hr>";
                 foreach ($row->detail as $detail) {
-                    echo "<p class='card-text'> <b>Gender</b><br>&ensp;&ensp;" . $detail->gender . "<p>" ;
+                    echo "<p class='card-text'> <b>Gender</b><br>&ensp;&ensp;" . $detail->gender . "</p>" ;
                     echo "<p class='card-text'>";
                     if (property_exists($detail->size,"US")){
                         echo "<b>US &ensp;</b>";
@@ -275,8 +276,22 @@
                         }
                     }
                     echo "<div>";
-                    echo '<form action="update.php" method="POST"><button type="input" name="update" value="' . $row->brand . '" data-value="' . $row->model . '" data-value3="' . $row->type . '" data-value4="' . $detail->gender . '" data-value5="' . $detail->color . '" class="btn btn-success update-btn"><i class="fas fa-pencil-alt"></i> Update</button></form>';
-                    echo '<form action="delete.php" method="POST"><button type="input" name="delete" value="' . $row->brand . '" data-value="' . $row->model . '" data-value3="' . $row->type . '" data-value4="' . $detail->gender . '" data-value5="' . $detail->color . '" class="btn btn-danger delete-btn"><i class="fas fa-trash-alt"></i> Delete</button></form>';
+                    echo '<form action="update.php" method="POST">
+                    <input type="hidden" name="brand" value="' . $row->brand . '">
+                    <input type="hidden" name="model" value="' . $row->model . '">
+                    <input type="hidden" name="type" value="' . $row->type . '">
+                    <input type="hidden" name="gender" value="' . $detail->gender . '">
+                    <input type="hidden" name="color" value="' . $detail->color . '">
+                    <button type="input" class="btn btn-success update-btn"><i class="fas fa-pencil-alt"></i> Update</button>
+                    </form>';
+                    echo '<form action="delete.php" method="POST">
+                    <input type="hidden" name="brand" value="' . $row->brand . '">
+                    <input type="hidden" name="model" value="' . $row->model . '">
+                    <input type="hidden" name="type" value="' . $row->type . '">
+                    <input type="hidden" name="gender" value="' . $detail->gender . '">
+                    <input type="hidden" name="color" value="' . $detail->color . '">
+                    <button type="input" class="btn btn-danger delete-btn"><i class="fas fa-trash-alt"></i> Delete</button>
+                    </form>';
                     echo "</div>";
                     $i++;
                     if (count($row->detail) > 1) {
@@ -295,6 +310,13 @@
                 echo "</div>";
                 echo "</div>";
             }
+        }
+    ?>
+    <?php
+        if(isset($_POST['delete'])) {
+            echo '<script language="javascript">';
+            echo 'alert("message successfully sent")';
+            echo '</script>';
         }
     ?>
 

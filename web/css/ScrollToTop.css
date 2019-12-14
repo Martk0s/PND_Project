@@ -1,8 +1,8 @@
 #myBtn {
   display: none;
   position: fixed;
-  bottom: 20px;
-  right: 30px;
+  bottom: 110px;
+  right: 47px;
   z-index: 99;
   font-size: 18px;
   border: none;
@@ -12,6 +12,23 @@
   cursor: pointer;
   padding: 15px;
   border-radius: 4px;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
 }
 
 #myBtn:hover {
