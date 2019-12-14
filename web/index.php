@@ -274,8 +274,10 @@
                             echo "<br>";
                         }
                     }
-                    echo '<button type="button" class="btn btn-success update-btn"><i class="fas fa-pencil-alt"></i> Update</button> 
-                    <button type="button" class="btn btn-danger delete-btn"><i class="fas fa-trash-alt"></i> Delete</button>';
+                    echo "<div>";
+                    echo '<form action="update.php" method="POST"><button type="input" name="update" value="' . $row->brand . '" data-value="' . $row->model . '" data-value3="' . $row->type . '" data-value4="' . $detail->gender . '" data-value5="' . $detail->color . '" class="btn btn-success update-btn"><i class="fas fa-pencil-alt"></i> Update</button></form>';
+                    echo '<form action="delete.php" method="POST"><button type="input" name="delete" value="' . $row->brand . '" data-value="' . $row->model . '" data-value3="' . $row->type . '" data-value4="' . $detail->gender . '" data-value5="' . $detail->color . '" class="btn btn-danger delete-btn"><i class="fas fa-trash-alt"></i> Delete</button></form>';
+                    echo "</div>";
                     $i++;
                     if (count($row->detail) > 1) {
                         if (count($row->detail) != $i) {

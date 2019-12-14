@@ -1,0 +1,2 @@
+use use PND_Project
+db.shoes.insert([{"id":85, "brand":"REEEEEEEEEEE", "model":"PEPE", "type":"No Shoes", "detail":[{"gender":"Male", "price":{"amount":9999.99,"currency":"USD"},"color":"Green", "size":{"US":[49, 52, 56],"UK":[49, 52, 56]},"picture":"https://i.kym-cdn.com/photos/images/original/000/915/652/b49.gif"}]}])
