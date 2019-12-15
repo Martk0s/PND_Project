@@ -60,7 +60,7 @@
     <a href ="index.php"><button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-chevron-up"></i></button><a>
     <!-- END Scroll To Top Button -->
     <div class = "container-classa">
-        <h4 class="head page-header"><br>SHOES</h4>
+        <h4 class="head page-header"><br>Insert New Record</h4>
     </div>
     <br><br><br><br><br><br>
     <div class="container container-border">
@@ -110,12 +110,12 @@
             <input class="form-control" type="text" id="model" name="model" style="width: 180px; display: inline;">
 
             <!-- Price -->
-            <label for="price">Price &ensp;:&ensp; </label>
-            <input class="form-control" type="number" name="price" style="width: 180px; display: inline;">
+            <label for="price">&ensp;&ensp;&ensp;&ensp;Price &ensp;:&ensp; </label>
+            <input class="form-control" type="number" step="0.01" name="price" style="width: 180px; display: inline;">
 
-            <label for="size">Size&ensp;:&ensp; </label>
+            <label for="size">&ensp;&ensp;&ensp;&ensp;Size&ensp;:&ensp; </label>
             <select name='size_type' id='size_type' class="form-control" style="width: 70px; display: inline;">
-                    <option value="๊US">US</option>
+                    <option value="US">US</option>
                     <option value="UK">UK</option>
                     <option value="EU">EU</option>
             </select>
@@ -123,35 +123,42 @@
             <!-- ROW -->
             <div class="row" style="margin-top: auto; margin-bottom: auto;">
                 &ensp;&ensp;
-                <div class="col-md-auto" style="margin: 0 auto;">
-                <br>
                 <!-- GENDER -->
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gender" value="male" checked>
-                    <label class="form-check-label" for="male">
-                        Male
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gender" value="female">
-                    <label class="form-check-label" for="female ">
-                        Female
-                    </label>
-                </div>
+                <div class="col-md-auto" style="margin: 0 auto;">
+                    <br>
+                    <div class="row">
+                        <div class="col-md-auto">
+                            Gender :
+                        </div>
+                        <div class="col-md-auto">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" value="male" checked>
+                                <label class="form-check-label" for="male">
+                                    Male
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" value="female">
+                                <label class="form-check-label" for="female ">
+                                    Female
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 <!-- END GENDER -->
                 </div>
                 </div>
             <!--pic-->
-            <br><br>
+            <br>
                     <div class="row" style="margin-left: 100; margin-right: 100;">
                     <label for="type">Picture Link &ensp;:&ensp; </label>
-                    <input class="form-control" type="text" name="pic" style="width: 180px; display: inline;">
+                    <input class="form-control" type="text" name="pic" style="width: 400px; display: inline;">
                 </div>  
 
             <!-- BUTTON -->
             <br><br>
                 <div class="row" style="margin-left: 100; margin-right: 100;">
-                    <button type="input" class="btn btn-secondary btn-block" name="insert" id="insert"><i class="fas fa-filter"></i> Insert! </i></button>
+                    <button type="input" class="btn btn-info btn-block" name="insert" id="insert"><i class="fas fa-plus"></i> Insert! </i></button>
                 </div>
 
             <!-- END BUTTON -->

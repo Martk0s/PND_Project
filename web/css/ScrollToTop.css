@@ -15,12 +15,13 @@
 }
 
 .float{
-	position:fixed;
+  position:fixed;
+  z-index: 99;
 	width:60px;
 	height:60px;
 	bottom:40px;
 	right:40px;
-	background-color:#0C9;
+	background-color:#17a2b8;
 	color:#FFF;
 	border-radius:50px;
 	text-align:center;
@@ -33,4 +34,24 @@
 
 #myBtn:hover {
   background-color: rgb(126, 126, 126);
+}
+
+/* unvisited link */
+a:link {
+  color: #0d5c68;
+}
+
+/* visited link */
+a:visited {
+  color: #0d5c68;
+}
+
+/* mouse over link */
+a:hover {
+  color: white;
+}
+
+/* selected link */
+a:active {
+  color: white;
 }

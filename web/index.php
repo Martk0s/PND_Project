@@ -275,24 +275,6 @@
                             echo "<br>";
                         }
                     }
-                    echo "<div>";
-                    echo '<form action="update.php" method="POST">
-                    <input type="hidden" name="brand" value="' . $row->brand . '">
-                    <input type="hidden" name="model" value="' . $row->model . '">
-                    <input type="hidden" name="type" value="' . $row->type . '">
-                    <input type="hidden" name="gender" value="' . $detail->gender . '">
-                    <input type="hidden" name="color" value="' . $detail->color . '">
-                    <button type="input" class="btn btn-success update-btn"><i class="fas fa-pencil-alt"></i> Update</button>
-                    </form>';
-                    echo '<form action="delete.php" method="POST">
-                    <input type="hidden" name="brand" value="' . $row->brand . '">
-                    <input type="hidden" name="model" value="' . $row->model . '">
-                    <input type="hidden" name="type" value="' . $row->type . '">
-                    <input type="hidden" name="gender" value="' . $detail->gender . '">
-                    <input type="hidden" name="color" value="' . $detail->color . '">
-                    <button type="input" class="btn btn-danger delete-btn"><i class="fas fa-trash-alt"></i> Delete</button>
-                    </form>';
-                    echo "</div>";
                     $i++;
                     if (count($row->detail) > 1) {
                         if (count($row->detail) != $i) {
@@ -304,19 +286,30 @@
                     }
     
                 }
+                echo "<div>";
+                echo '<form action="update.php" method="POST">
+                <input type="hidden" name="brand" value="' . $row->brand . '">
+                <input type="hidden" name="model" value="' . $row->model . '">
+                <input type="hidden" name="type" value="' . $row->type . '">
+                <input type="hidden" name="gender" value="' . $detail->gender . '">
+                <input type="hidden" name="color" value="' . $detail->color . '">
+                <button type="input" class="btn btn-success update-btn"><i class="fas fa-pencil-alt"></i> Update</button>
+                </form>';
+                echo '<form action="delete.php" method="POST">
+                <input type="hidden" name="brand" value="' . $row->brand . '">
+                <input type="hidden" name="model" value="' . $row->model . '">
+                <input type="hidden" name="type" value="' . $row->type . '">
+                <input type="hidden" name="gender" value="' . $detail->gender . '">
+                <input type="hidden" name="color" value="' . $detail->color . '">
+                <button type="input" class="btn btn-danger delete-btn"><i class="fas fa-trash-alt"></i> Delete</button>
+                </form>';
+                echo "</div>";
                 echo "</div>";
                 echo "</div>";
                 echo "</div>";
                 echo "</div>";
                 echo "</div>";
             }
-        }
-    ?>
-    <?php
-        if(isset($_POST['delete'])) {
-            echo '<script language="javascript">';
-            echo 'alert("message successfully sent")';
-            echo '</script>';
         }
     ?>
 

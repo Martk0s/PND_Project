@@ -57,8 +57,10 @@
 </style>
 <body>
     <div class="container">
+        <br><br>
         <h1>Are you sure to delete this record?</h1>
         <?php
+            error_reporting(~E_NOTICE );
             $brand = $_POST['brand'];
             $model = $_POST['model'];
             $type = $_POST['type'];
@@ -136,7 +138,7 @@
                     }
                     echo "<div>";
                     echo '<form action="" method="POST">
-                    <button type="input" name="cancel" class="btn btn-success update-btn"><i class="fas fa-window-close"></i> Cancel</button>
+                    <button type="input" name="cancel" class="btn btn-warning update-btn"><i class="fas fa-window-close"></i> Cancel</button>
                     </form>';
                     echo '<form action="" method="POST">
                     <input type="hidden" name="brand" value="' . $row->brand . '">
