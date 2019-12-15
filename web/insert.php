@@ -69,58 +69,13 @@
             <div class="col-md-auto" style="margin: auto;">
             <br><br>
             <label for="brand">Brand&ensp;:&ensp; </label>
-            <select name='brand' id='brand' class="form-control" style="width: 180px; display: inline;">
-                <option value="">-- Select Brand --</option>
-                <option value="Converse">Converse</option>
-                <option value="Jack & Jones">Jack & Jones</option>
-                <option value="Vans">Vans</option>
-                <option value="Adidas">Adidas</option>
-                <option value="Superga">Superga</option>
-                <option value="Polo Ralph Lauren">Polo Ralph Lauren</option>
-                <option value="New Look">New Look</option>
-                <option value="TOMS">TOMS</option>
-                <option value="Superdry">Superdry</option>
-                <option value="Dr. Martens">Dr. Martens</option>
-                <option value="Tommy Hilfiger">Tommy Hilfiger</option>
-                <option value="Fred Perry">Fred Perry</option>
-                <option value="Topshop">Topshop</option>
-                <option value="RAID">RAID</option>
-                <option value="Kickers">Kickers</option>
-                <option value="Monki">Monki</option>
-                <option value="Skechers">Skechers</option>
-                <option value="ASOS DESIGN">ASOS DESIGN</option>
-                <option value="Lamoda">Lamoda</option>
-                <option value="Simmi">Simmi</option>
-                <option value="Glamorous">Glamorous</option>
-                <option value="Nike">Nike</option>
-                <option value="New Balance">New Balance</option>
-                <option value="Birkenstock">Birkenstock</option>
-                <option value="Fila">Fila</option>
-            </select>
+            <input class="form-control" type="text" name="brand" style="width: 180px; display: inline;">
             </div>
 
             <div class="col-md-auto" style="margin: auto;">
             <br><br>
-            <label for="type">Type&ensp;:&ensp; </label>
-            <select name='type' id='type' class="form-control" style="width: 180px; display: inline;">
-                <option value="">-- Select Type --</option>
-                <option value="Plimsoll">Plimsoll</option>
-                <option value="Fila">Fila</option>
-                <option value="Trainers">Trainers</option>
-                <option value="Boat Shoes">Boat Shoes</option>
-                <option value="Ankle Boots">Ankle Boots</option>
-                <option value="Brogue">Brogue</option>
-                <option value="Chelsea Boots">Chelsea Boots</option>
-                <option value="Chukka Boots">Chukka Boots</option>
-                <option value="Chunky">Chunky</option>
-                <option value="Derby">Derby</option>
-                <option value="Espadrille">Espadrille</option>
-                <option value="Sandals">Sandals</option>
-                <option value="Loafers">Loafers</option>
-                <option value="Military Boots">Military Boots</option>
-                <option value="Oxford">Oxford</option>
-                <option value="Heeled">Heeled</option>
-            </select>
+            <label for="type">Type &ensp;:&ensp; </label>
+            <input class="form-control" type="text" name="type" style="width: 180px; display: inline;">
             </div>
             <!-- SIZE -->
             <div class="col-md-auto" style="margin: auto;">
@@ -173,25 +128,25 @@
                 <br>
                 <!-- GENDER -->
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gender" id="male" value="male" checked>
+                    <input class="form-check-input" type="radio" name="gender" value="male" checked>
                     <label class="form-check-label" for="male">
                         Male
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                    <input class="form-check-input" type="radio" name="gender" value="female">
                     <label class="form-check-label" for="female ">
                         Female
-                </label>
-</div>
+                    </label>
+                </div>
                 <!-- END GENDER -->
                 </div>
                 </div>
             <!-- BUTTON -->
             <br><br>
-            <div class="row" style="margin-left: 100; margin-right: 100;">
-                <button type="button" class="btn btn-secondary btn-block"><i class="fas fa-filter"></i> Insert! </i></button>
-            </div>
+                <div class="row" style="margin-left: 100; margin-right: 100;">
+                    <button type="input" class="btn btn-secondary btn-block" name="insert" id="insert"><i class="fas fa-filter"></i> Insert! </i></button>
+                </div>
 
             <!-- END BUTTON -->
             <!-- row -->
@@ -200,48 +155,78 @@
     <!-- Container -->
     <hr style="width: 1200px;size: 4px;">
     <?php
-        //เชื่อมต่อ MongoDB
-        $conn = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+       $data = [];
+       if(isset($_POST['insert'])) {
+           if($_POST['brand'] != ""){
+               $data += ["brand"=>$_POST['brand']];
+           }else{
+                echo "<script language=\"JavaScript\">  
+                alert('กรุณาเลือก Brand')</script>";
+           }
+           
+           if($_POST['model'] != ""){
+               $data += ["model"=>$_POST['model']];
+           }else{
+            echo "<script language=\"JavaScript\">  
+            alert('กรุณากรอกโมเดล')</script>";
+            }
+           
+           if($_POST['type'] != ""){
+               $data += ["type"=>$_POST['type']];
+               
+           }else{
+            echo "<script language=\"JavaScript\">  
+            alert('กรุณาเลือก Type')</script>";
+       }
+           
+           if($_POST['gender'] != ""){
+               $data += ["detail" =>
+                            ["gender"=>$_POST['gender']]];
+           }else{
+            echo "<script language=\"JavaScript\">  
+            alert('กรุณาเลือกเพศ')</script>";
+       }
 
-        if(isset($_POST['submit'])){
-            
-            $brand = $_POST['brand'];
-            $model = $_POST['model'];
-            $type = $_POST['type'];
-            $gender = $_POST['gender'];
-            $price = $_POST['price'];
-            $color = $_POST['color'];
-            $size_type = $_POST['size_type'];
-            $size_value = $_POST['size_value'];
-            $vallue = (explode(" ", $size_value));
+           if($_POST['price'] != ""){
+               $data += ["detail" =>
+                            ["price" => 
+                                [
+                                    "amount" =>$_POST['price'],
+                                    "currency" => "USD"
+                                ]
+                            ]
+                        ];
+           }else{
+            echo "<script language=\"JavaScript\">  
+            alert('กรุณากรอกราคา')</script>";
+       }
+       
+           if($_POST['color'] != ""){
+                $data += ["detail" =>["color"=>$_POST['color']]];
+           }else{
+            echo "<script language=\"JavaScript\">  
+            alert('กรุณาเลือกสี')</script>";
+       }
+           if($_POST['size_type'] !="" && $_POST['size_value'] !=""){
+               $size_values = (explode(" ",$_POST['size_value']));
+               $data += ["detail"=>["size"=>[$_POST['size_type']=>$size_values]]];
+           }else{
+            echo "<script language=\"JavaScript\">  
+            alert('กรุณาระบุข้อมูล size')</script>";
+       }
 
-            //สร้างBlock สำหรับรองรับการเพิ่มข้อมูลต่างๆแบบ Bulk
-            $bulkWrite = new MongoDB\Driver\BulkWrite;
+           $conn = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+           $bulkWrite = new MongoDB\Driver\BulkWrite;
+           $bulkWrite->insert($data);
+           $out = $conn->executeBulkWrite('PND_Project.shoes', $bulkWrite);
+           if($out){
+               echo "Done!";
+           }else{
+               echo "Fail!";    
+           }
 
-            //ข้อมูลที่่ต้องการเพิ่ม
-            $data = array(
-                'brand' => $brand,
-                'model' => $model,
-                'type' => $type,
-                'detail' => array(
-                    'gender' => $gender,
-                    'price' => array(
-                        'amount' => $price,
-                        'currency' => "USD",
-                    ),
-                    'color' => $color,
-                    'size' => array(
-                        $size_type => $vallue
-                    ),
-                )
-            );
-
-            //นำข้อมูลไปใส่ block ของ Bulk
-            $bulkWrite->insert($data);
-
-            //เพิ่มข้อมูลใส่ MongoDB
-            $push = $conn->executeBulkWrite('PND_Project.shoes', $bulkWrite);
         }
+           
     ?>
 </body>
 <script>
