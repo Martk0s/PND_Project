@@ -106,6 +106,9 @@
                     }
                     echo "&ensp;<input type='text' class='form-control' value='". $usstack . "'  name='new_ussize' style='width: 200px; height: 30px; display: inline;'><br>";
                 }
+                else {
+                    echo "&ensp;<input type='text' class='form-control' value='". $usstack . "'  name='new_ussize' style='width: 200px; height: 30px; display: inline;'><br>";
+                }
                 if (property_exists($detail->size,"UK")){
                     echo "<b>UK&ensp;|&ensp;</b>";
                     $ukstack= '';
@@ -115,6 +118,9 @@
                     }
                     echo "&ensp;<input type='text' class='form-control' value='". $ukstack . "' name='new_uksize' style='width: 200px; height: 30px; display: inline;'><br>";
                 }
+                else {
+                    echo "&ensp;<input type='text' class='form-control' value='". $ukstack . "' name='new_uksize' style='width: 200px; height: 30px; display: inline;'><br>";
+                }
                 if (property_exists($detail->size,"EU")){
                     echo "<b>EU&ensp;|&ensp;</b>";
                     $eustack = '';
@@ -122,6 +128,9 @@
                         echo $EU . "&ensp;&ensp;";
                         $eustack .= strval($EU) . " ";
                     }
+                    echo "&ensp;<input type='text' class='form-control' value='". $eustack . "' name='new_eusize' style='width: 200px; height: 30px; display: inline;'>";
+                }
+                else {
                     echo "&ensp;<input type='text' class='form-control' value='". $eustack . "' name='new_eusize' style='width: 200px; height: 30px; display: inline;'>";
                 }
                 echo "</p>";
@@ -178,16 +187,17 @@
         $conn = new MongoDB\Driver\Manager("mongodb://localhost:27017");
 
         if(isset($_POST['Update'])){
-        $new_brand = $_POST['new_brand'];
+        /*$new_brand = $_POST['new_brand'];
         $new_model = $_POST['new_model'];
-        $new_type = $_POST['new_type'];
+        $new_type = $_POST['new_type'];*/
         $new_gender = $_POST['new_gender'];
+        $new_color = $_POST['new_color'];
+        $new_picurl = $_POST['new_picurl'];
+
         $new_ussize = $_POST['new_ussize'];
         $new_uksize = $_POST['new_uksize'];
-        //$new_eusize = $_POST['new_eusize'];
-        $new_color = $_POST['new_color'];
-        $new_amount = $_POST['new_amount'];
-        $new_picurl = $_POST['new_picurl'];
+        $new_eusize = $_POST['new_eusize'];
+        //$new_amount = $_POST['new_amount'];
         
         /*echo "$new_brand $new_model $new_type";*/
         
@@ -197,34 +207,27 @@
         
         //ตำแหน่งที่ต้องการจะเปลี่ยน
         $filter = array('$and'=>array(array('brand'=>$brand),array('model'=>$model),array('type'=>$type),array('detail.gender'=>$gender),array('detail.color'=>$color)));
-        //brand,model,type,gender,US,UK,EU,color,amount,url
-        /*$update = ['$set' => ['brand' => $new_brand, 'model' => $new_model, 'type' => $new_type, 'detail.gender' => $new_gender]];
-        $update = array(
-            'brand' => $new_brand,
-            'model' => $new_model,
-            'type' => $new_type,
-        );
-        $update = array( '$set' => array(
-            'brand' => $new_brand,
-            'model' => $new_model,
-            'type' => $new_type,
-            'detail' => array(
+
+        
+        $USArray = explode(' ',$new_ussize);
+        $UKArray = explode(' ',$new_uksize);
+        $EUArray = explode(' ',$new_eusize);
+        $priceObj = ['amount'=>$_POST['new_amount'],'currency'=>'USD'];
+        $sizeObj = ['US'=>$USArray,'UK'=>$UKArray,'EU'=>$EUArray];
+        $detailArray = array(
+            [  
                 'gender' => $new_gender,
-                'price' => array(
-                    'amount' => $new_amount,
-                    'currency' => "USD",
-                ),
+                'price'=> $priceObj,
                 'color' => $new_color,
-                'size' => array(
-                    'US' => $new_ussize,
-                    'UK' => $new_uksize
-                )
-            )
-            )
-        );*/
-        $update = ['$set' => ['brand' => $new_brand, 'model' => $new_model, 'type' => $new_type, 'detail->gender' => $new_gender,
-                              'detail.color' => $new_color, 'detail.size.US' => $new_ussize , 'detail.size.UK' => $new_uksize , 
-                              'detail.size.EU' => $new_eusize , 'detail.price.amount' => $new_amount,'detail.picture' => $new_picurl]];
+                'size' => $sizeObj,
+                'picture' => $new_picurl
+            ]
+        );
+        $update = ['$set' => ['brand' => $_POST['new_brand'],   
+                              'model' => $_POST['new_model'], 
+                              'type' => $_POST['new_type'],
+                              'detail' => $detailArray
+                              ]];
         $options = ['multi' => false];
         $bulkWrite->update($filter, $update, $options);
         $out = $conn->executeBulkWrite('PND_Project.shoes', $bulkWrite);
