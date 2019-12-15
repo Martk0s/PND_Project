@@ -82,7 +82,6 @@
                 <br><br>
                 <label for="color">Color&ensp;:&ensp; </label>
                 <select name='color' id='color' class="form-control" style="width: 180px; display: inline;">
-                    <option value="">-- Select Color --</option>
                     <option value="Monoblack">Monoblack</option>
                     <option value="Black">Black</option>
                     <option value="White">White</option>
@@ -116,7 +115,6 @@
 
             <label for="size">Size&ensp;:&ensp; </label>
             <select name='size_type' id='size_type' class="form-control" style="width: 70px; display: inline;">
-                    <option value="">---</option>
                     <option value="us">US</option>
                     <option value="uk">UK</option>
                     <option value="eu">EU</option>
@@ -146,7 +144,8 @@
             <!--pic-->
             <br><br>
                     <div class="row" style="margin-left: 100; margin-right: 100;">
-                        <input type="file" class="form-control-file" name="pic" class="custom-file-input">
+                    <label for="type">Picture Link &ensp;:&ensp; </label>
+                    <input class="form-control" type="text" name="pic" style="width: 180px; display: inline;">
                 </div>  
 
             <!-- BUTTON -->
