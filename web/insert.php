@@ -115,9 +115,9 @@
 
             <label for="size">Size&ensp;:&ensp; </label>
             <select name='size_type' id='size_type' class="form-control" style="width: 70px; display: inline;">
-                    <option value="us">US</option>
-                    <option value="uk">UK</option>
-                    <option value="eu">EU</option>
+                    <option value="๊US">US</option>
+                    <option value="UK">UK</option>
+                    <option value="EU">EU</option>
             </select>
             <input class="form-control" type="text" name="size_value" style="width: 180px; display: inline;">
             <!-- ROW -->
