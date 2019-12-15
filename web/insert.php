@@ -112,15 +112,16 @@
 
             <!-- Price -->
             <label for="price">Price &ensp;:&ensp; </label>
-            <input class="form-control" type="number" id="price" name="price" style="width: 180px; display: inline;">
+            <input class="form-control" type="number" name="price" style="width: 180px; display: inline;">
 
             <label for="size">Size&ensp;:&ensp; </label>
             <select name='size_type' id='size_type' class="form-control" style="width: 70px; display: inline;">
+                    <option value="">---</option>
                     <option value="us">US</option>
                     <option value="uk">UK</option>
                     <option value="eu">EU</option>
             </select>
-            <input class="form-control" type="text" id="size_value" name="size_value" style="width: 180px; display: inline;">
+            <input class="form-control" type="text" name="size_value" style="width: 180px; display: inline;">
             <!-- ROW -->
             <div class="row" style="margin-top: auto; margin-bottom: auto;">
                 &ensp;&ensp;
@@ -142,6 +143,12 @@
                 <!-- END GENDER -->
                 </div>
                 </div>
+            <!--pic-->
+            <br><br>
+                    <div class="row" style="margin-left: 100; margin-right: 100;">
+                        <input type="file" class="form-control-file" name="pic" class="custom-file-input">
+                </div>  
+
             <!-- BUTTON -->
             <br><br>
                 <div class="row" style="margin-left: 100; margin-right: 100;">
@@ -150,6 +157,7 @@
 
             <!-- END BUTTON -->
             <!-- row -->
+            
     </form>
     </div>
     <!-- Container -->
@@ -157,75 +165,36 @@
     <?php
        $data = [];
        if(isset($_POST['insert'])) {
-           if($_POST['brand'] != ""){
-               $data += ["brand"=>$_POST['brand']];
-           }else{
-                echo "<script language=\"JavaScript\">  
-                alert('กรุณาเลือก Brand')</script>";
-           }
-           
-           if($_POST['model'] != ""){
-               $data += ["model"=>$_POST['model']];
-           }else{
-            echo "<script language=\"JavaScript\">  
-            alert('กรุณากรอกโมเดล')</script>";
-            }
-           
-           if($_POST['type'] != ""){
-               $data += ["type"=>$_POST['type']];
-               
-           }else{
-            echo "<script language=\"JavaScript\">  
-            alert('กรุณาเลือก Type')</script>";
-       }
-           
-           if($_POST['gender'] != ""){
-               $data += ["detail" =>
-                            ["gender"=>$_POST['gender']]];
-           }else{
-            echo "<script language=\"JavaScript\">  
-            alert('กรุณาเลือกเพศ')</script>";
-       }
-
-           if($_POST['price'] != ""){
-               $data += ["detail" =>
-                            ["price" => 
-                                [
-                                    "amount" =>$_POST['price'],
-                                    "currency" => "USD"
-                                ]
-                            ]
-                        ];
-           }else{
-            echo "<script language=\"JavaScript\">  
-            alert('กรุณากรอกราคา')</script>";
-       }
-       
-           if($_POST['color'] != ""){
-                $data += ["detail" =>["color"=>$_POST['color']]];
-           }else{
-            echo "<script language=\"JavaScript\">  
-            alert('กรุณาเลือกสี')</script>";
-       }
-           if($_POST['size_type'] !="" && $_POST['size_value'] !=""){
-               $size_values = (explode(" ",$_POST['size_value']));
-               $data += ["detail"=>["size"=>[$_POST['size_type']=>$size_values]]];
-           }else{
-            echo "<script language=\"JavaScript\">  
-            alert('กรุณาระบุข้อมูล size')</script>";
-       }
+            $size_values = explode(" ", $_POST['size_value']);
+            $detail = [[
+                        "gender" => $_POST['gender'],
+                        "price" =>[
+                            "amount" => $_POST['price'],
+                            "currency" => "USD"
+                            ],
+                        "color" => $_POST['color'],
+                        "size" => [
+                            $_POST['size_type'] => $size_values
+                        ],
+                        "picture"=> $_POST['pic']
+                        ]];
+            $data = [
+                        "brand" => $_POST['brand'],
+                        "model" => $_POST['model'],
+                        "type" => $_POST['type'],
+                        "detail" => $detail
+                    ];
 
            $conn = new MongoDB\Driver\Manager("mongodb://localhost:27017");
            $bulkWrite = new MongoDB\Driver\BulkWrite;
            $bulkWrite->insert($data);
            $out = $conn->executeBulkWrite('PND_Project.shoes', $bulkWrite);
-           if($out){
-               echo "Done!";
-           }else{
-               echo "Fail!";    
+           if ($out) {
+            echo '<script type="text/javascript">alert("Insert Data to Database sucessful!!"); window.location = "index.php";</script>';
+        }else{
+            echo '<script type="text/javascript">alert("Fail to insert new data")</script>';
+        }    
            }
-
-        }
            
     ?>
 </body>
