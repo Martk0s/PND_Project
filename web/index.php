@@ -288,6 +288,7 @@
                 }
                 echo "<div>";
                 echo '<form action="update.php" method="POST">
+                <input type="hidden" name="_id" value="' . $row->_id . '">
                 <input type="hidden" name="brand" value="' . $row->brand . '">
                 <input type="hidden" name="model" value="' . $row->model . '">
                 <input type="hidden" name="type" value="' . $row->type . '">
@@ -296,6 +297,7 @@
                 <button type="input" class="btn btn-success update-btn"><i class="fas fa-pencil-alt"></i> Update</button>
                 </form>';
                 echo '<form action="delete.php" method="POST">
+                <input type="hidden" name="_id" value="' . $row->_id . '">
                 <input type="hidden" name="brand" value="' . $row->brand . '">
                 <input type="hidden" name="model" value="' . $row->model . '">
                 <input type="hidden" name="type" value="' . $row->type . '">

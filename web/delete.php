@@ -60,13 +60,15 @@
         <br><br>
         <h1>Are you sure to delete this record?</h1>
         <?php
+            $_id = $_POST['_id'];
             error_reporting(~E_NOTICE );
-            $brand = $_POST['brand'];
+            /*$brand = $_POST['brand'];
             $model = $_POST['model'];
             $type = $_POST['type'];
             $gender = $_POST['gender'];
-            $color = $_POST['color'];
-            $filter = array('$and'=>array(array('brand'=>$brand),array('model'=>$model),array('type'=>$type),array('detail.gender'=>$gender),array('detail.color'=>$color)));
+            $color = $_POST['color'];*/
+            //$filter = array('$and'=>array(array('brand'=>$brand),array('model'=>$model),array('type'=>$type),array('detail.gender'=>$gender),array('detail.color'=>$color)));
+            $filter = ['_id'=>new MongoDB\BSON\ObjectID($_id)];
             $conn = new MongoDB\Driver\Manager("mongodb://localhost:27017");
             $query = new MongoDB\Driver\Query($filter);
             $rows = $conn->executeQuery("PND_Project.shoes", $query);
@@ -136,19 +138,6 @@
                             echo "<br>";
                         }
                     }
-                    echo "<div>";
-                    echo '<form action="" method="POST">
-                    <button type="input" name="cancel" class="btn btn-warning update-btn"><i class="fas fa-window-close"></i> Cancel</button>
-                    </form>';
-                    echo '<form action="" method="POST">
-                    <input type="hidden" name="brand" value="' . $row->brand . '">
-                    <input type="hidden" name="model" value="' . $row->model . '">
-                    <input type="hidden" name="type" value="' . $row->type . '">
-                    <input type="hidden" name="gender" value="' . $detail->gender . '">
-                    <input type="hidden" name="color" value="' . $detail->color . '">
-                    <button type="input" name="delete" class="btn btn-danger delete-btn"><i class="fas fa-trash-alt"></i> CONFIRM</button>
-                    </form>';
-                    echo "</div>";
                     $i++;
                     if (count($row->detail) > 1) {
                         if (count($row->detail) != $i) {
@@ -160,6 +149,20 @@
                     }
 
                 }
+                echo "<div>";
+                echo '<form action="" method="POST">
+                <button type="input" name="cancel" class="btn btn-warning update-btn"><i class="fas fa-window-close"></i> Cancel</button>
+                </form>';
+                echo '<form action="" method="POST">
+                <input type="hidden" name="_id" value="' . $row->_id . '">
+                <input type="hidden" name="brand" value="' . $row->brand . '">
+                <input type="hidden" name="model" value="' . $row->model . '">
+                <input type="hidden" name="type" value="' . $row->type . '">
+                <input type="hidden" name="gender" value="' . $detail->gender . '">
+                <input type="hidden" name="color" value="' . $detail->color . '">
+                <button type="input" name="delete" class="btn btn-danger delete-btn"><i class="fas fa-trash-alt"></i> CONFIRM</button>
+                </form>';
+                echo "</div>";
                 echo "</div>";
                 echo "</div>";
                 echo "</div>";
@@ -176,7 +179,8 @@
                 $type = $_POST['type'];
                 $gender = $_POST['gender'];
                 $color = $_POST['color'];
-                $filter = array('$and'=>array(array('brand'=>$brand),array('model'=>$model),array('type'=>$type),array('detail.gender'=>$gender),array('detail.color'=>$color)));
+                //$filter = array('$and'=>array(array('brand'=>$brand),array('model'=>$model),array('type'=>$type),array('detail.gender'=>$gender),array('detail.color'=>$color)));
+                $filter = ['_id'=>new MongoDB\BSON\ObjectID($_id)];
                 $options = ['limit'=>1];
                 $bulkWrite->delete($filter, $options);
                 $out = $conn->executeBulkWrite('PND_Project.shoes', $bulkWrite);

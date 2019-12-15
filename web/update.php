@@ -62,7 +62,9 @@
         <h1>Update record</h1>
         <?php
             echo "<form action='' method='POST'>";
-            $brand = $_POST['brand'];
+            $_id = $_POST['_id'];
+            echo "<input type='hidden' name='_id' value='$_id'>";
+            /*$brand = $_POST['brand'];
             echo "<input type='hidden' name='brand' value='$brand'>";
             $model = $_POST['model'];
             echo "<input type='hidden' name='model' value='$model'>";
@@ -71,11 +73,13 @@
             $gender = $_POST['gender'];
             echo "<input type='hidden' name='gender' value='$gender'>";
             $color = $_POST['color'];
-            echo "<input type='hidden' name='color' value='$color'>";
+            echo "<input type='hidden' name='color' value='$color'>";*/
+
             /* รับค่าจากเพจ ['brand'=> $brand/* เป้าหมายที่ดึงมา */
 
             $conn = new MongoDB\Driver\Manager("mongodb://localhost:27017");
-            $filter = array('$and'=>array(array('brand'=>$brand),array('model'=>$model),array('type'=>$type),array('detail.gender'=>$gender),array('detail.color'=>$color)));
+            //$filter = array('$and'=>array(array('brand'=>$brand),array('model'=>$model),array('type'=>$type),array('detail.gender'=>$gender),array('detail.color'=>$color)));
+            $filter = ['_id'=>new MongoDB\BSON\ObjectID($_id)];
             $query = new MongoDB\Driver\Query($filter);
             $rows = $conn->executeQuery("PND_Project.shoes", $query);
 
@@ -92,9 +96,9 @@
                 echo "<div class='col-md-8 px-3 py-3'>";
                 echo "<div class='card-block px-3'>";
                 echo "<p class='id-no' style='text-align: right; color: rgb(200, 200, 200);'>ID: " . $row->_id . "<br></p>";//debug
-                echo "<p class='card-text'> <b>Brand</b>&ensp;|&ensp;" . $row->brand . "&ensp; <input type='text' class='form-control' value='$brand' name='new_brand' style='width: 280px; height: 30px; display: inline;'>" ;
-                echo "<p class='card-text'> <b>Model</b>&ensp;|&ensp;" . $row->model. "&ensp; <input type='text' class='form-control' value='$model' name='new_model' style='width: 200px; height: 30px; display: inline;'>" ;
-                echo "<p class='card-text'> <b>Type</b>&ensp;|&ensp;" . $row->type . "&ensp; <input type='text' class='form-control' value='$type' name='new_type' style='width: 200px; height: 30px; display: inline;'>" ;
+                echo "<p class='card-text'> <b>Brand</b>&ensp;|&ensp;" . $row->brand . "&ensp; <input type='text' class='form-control' value='$row->brand' name='new_brand' style='width: 280px; height: 30px; display: inline;'>" ;
+                echo "<p class='card-text'> <b>Model</b>&ensp;|&ensp;" . $row->model. "&ensp; <input type='text' class='form-control' value='$row->model' name='new_model' style='width: 200px; height: 30px; display: inline;'>" ;
+                echo "<p class='card-text'> <b>Type</b>&ensp;|&ensp;" . $row->type . "&ensp; <input type='text' class='form-control' value='$row->type' name='new_type' style='width: 200px; height: 30px; display: inline;'>" ;
                 echo "<hr>";
                 foreach ($row->detail as $detail) {
                     echo '<label for="color" class="card-text"><b>Gender</b>&ensp;:&ensp; </label>
@@ -230,7 +234,8 @@
                 $bulkWrite = new MongoDB\Driver\BulkWrite;
                 
                 //ตำแหน่งที่ต้องการจะเปลี่ยน
-                $filter = array('$and'=>array(array('brand'=>$brand),array('model'=>$model),array('type'=>$type),array('detail.gender'=>$gender),array('detail.color'=>$color)));
+                //$filter = array('$and'=>array(array('brand'=>$brand),array('model'=>$model),array('type'=>$type),array('detail.gender'=>$gender),array('detail.color'=>$color)));
+                $filter = ['_id'=>new MongoDB\BSON\ObjectID($_id)];
 
                 $i = 0;
                 $USArray = explode(' ', $new_ussize);
