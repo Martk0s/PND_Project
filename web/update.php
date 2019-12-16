@@ -104,8 +104,8 @@
                     echo '<label for="color" class="card-text"><b>Gender</b>&ensp;:&ensp; </label>
                     <select name="new_gender" class="form-control card-text" style="width: 200px; display: inline;">
                         <option value=' . $detail->gender . '>' . $detail->gender . ' (not change)</option>
-                        <option value="male">male</option>
-                        <option value="female">female</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
                     </select>';
                     echo "<p class='card-text'>";
                     if (property_exists($detail->size,"US")){
@@ -154,8 +154,26 @@
                     //echo "<p class='card-text'> <b>Color</b>&ensp;|&ensp;" . $detail->color . "&ensp;<input type='text' class='form-control' value='". $detail->color ."' name='new_color' style='width: 200px; height: 30px; display: inline;'>" ;
                     echo '<label for="color" class="card-text"><b>Color</b>&ensp;:&ensp; </label>
                     <select name="new_color" class="form-control card-text" style="width: 250px; display: inline;">
-                        <option value=' . $detail->color . '>' . $detail->color . ' (not change)</option>
-                        <option value="Monoblack">Monoblack</option>
+                        <option value=' . $detail->color . '>' . $detail->color . ' (not change)</option>';
+                        $conn = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+                        $query = new MongoDB\Driver\Query([]);
+                        $rows = $conn->executeQuery("PND_Project.shoes", $query);
+
+                        $check_dup = [];
+                        foreach($rows as $row){
+                            foreach($row->detail as $detail){
+                                if(in_array($detail->color, $check_dup)){
+                                    continue;
+                                }else{
+                                    array_push($check_dup, $detail->color);
+                                }
+                            }
+                        }
+                        sort($check_dup);
+                        for($i = 0; $i != count($check_dup); $i++){
+                            echo '<option value="' . $check_dup[$i] . '">' . $check_dup[$i] . '</option>';
+                        }
+                        /*<option value="Monoblack">Monoblack</option>
                         <option value="Black">Black</option>
                         <option value="White">White</option>
                         <option value="Red">Red</option>
@@ -170,10 +188,15 @@
                         <option value="Yellow">Yellow</option>
                         <option value="Blue">Blue</option>
                         <option value="Clear">Clear</option>
-                        <option value="Sliver">Sliver</option>
-                    </select>';
+                        <option value="Sliver">Sliver</option>*/
+                    echo '</select>';
                     echo "</div>";
                     echo "</div>";
+                    $conn = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+                    //$filter = array('$and'=>array(array('brand'=>$brand),array('model'=>$model),array('type'=>$type),array('detail.gender'=>$gender),array('detail.color'=>$color)));
+                    $filter = ['_id'=>new MongoDB\BSON\ObjectID($_id)];
+                    $query = new MongoDB\Driver\Query($filter);
+                    $rows = $conn->executeQuery("PND_Project.shoes", $query);
                     foreach ($detail->price as $price) {
                         echo "<p class='card-text'> <b>Price</b>&ensp;|&ensp;" . $price . "&ensp;<input type='text' class='form-control' value='". $price ."' name='new_amount' style='width: 150px; height: 30px; display: inline;'>" ;
                     break;

@@ -73,7 +73,25 @@
             <label for="brand">Brand&ensp;:&ensp; </label>
             <select name='brand' id='brand' class="form-control" style="width: 180px; display: inline;">
                 <option value="" >-- Show All --</option>
-                <option value="Converse">Converse</option>
+                <?php
+                    $conn = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+                    $query = new MongoDB\Driver\Query([]);
+                    $rows = $conn->executeQuery("PND_Project.shoes", $query);
+
+                    $check_dup = [];
+                    foreach($rows as $row){
+                        if(in_array($row->brand, $check_dup)){
+                            continue;
+                        }else{
+                            array_push($check_dup, $row->brand);
+                        }
+                    }
+                    sort($check_dup);
+                    for($i = 0; $i != count($check_dup); $i++){
+                        echo '<option value="' . $check_dup[$i] . '">' . $check_dup[$i] . '</option>';
+                    }
+                ?>
+                <!--option value="Converse">Converse</option>
                 <option value="Jack & Jones">Jack & Jones</option>
                 <option value="Vans">Vans</option>
                 <option value="Adidas">Adidas</option>
@@ -97,7 +115,7 @@
                 <option value="Nike">Nike</option>
                 <option value="New Balance">New Balance</option>
                 <option value="Birkenstock">Birkenstock</option>
-                <option value="Fila">Fila</option>
+                <option value="Fila">Fila</option-->
             </select>
             </div>
 
@@ -106,7 +124,25 @@
             <label for="type">Type&ensp;:&ensp; </label>
             <select name='type' id='type' class="form-control" style="width: 180px; display: inline;">
                 <option value="">-- Show All --</option>
-                <option value="Plimsoll">Plimsoll</option>
+                <?php
+                    $conn = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+                    $query = new MongoDB\Driver\Query([]);
+                    $rows = $conn->executeQuery("PND_Project.shoes", $query);
+
+                    $check_dup = [];
+                    foreach($rows as $row){
+                        if(in_array($row->type, $check_dup)){
+                            continue;
+                        }else{
+                            array_push($check_dup, $row->type);
+                        }
+                    }
+                    sort($check_dup);
+                    for($i = 0; $i != count($check_dup); $i++){
+                        echo '<option value="' . $check_dup[$i] . '">' . $check_dup[$i] . '</option>';
+                    }
+                ?>
+                <!--option value="Plimsoll">Plimsoll</option>
                 <option value="Fila">Fila</option>
                 <option value="Trainers">Trainers</option>
                 <option value="Boat Shoes">Boat Shoes</option>
@@ -121,7 +157,7 @@
                 <option value="Loafers">Loafers</option>
                 <option value="Military Boots">Military Boots</option>
                 <option value="Oxford">Oxford</option>
-                <option value="Heeled">Heeled</option>
+                <option value="Heeled">Heeled</option-->
             </select>
             </div>
             <!-- SIZE -->
@@ -130,7 +166,27 @@
                 <label for="color">Color&ensp;:&ensp; </label>
                 <select name='color' id='color' class="form-control" style="width: 180px; display: inline;">
                     <option value="">-- Show All --</option>
-                    <option value="Monoblack">Monoblack</option>
+                    <?php
+                        $conn = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+                        $query = new MongoDB\Driver\Query([]);
+                        $rows = $conn->executeQuery("PND_Project.shoes", $query);
+
+                        $check_dup = [];
+                        foreach($rows as $row){
+                            foreach($row->detail as $detail){
+                                if(in_array($detail->color, $check_dup)){
+                                    continue;
+                                }else{
+                                    array_push($check_dup, $detail->color);
+                                }
+                            }
+                        }
+                        sort($check_dup);
+                        for($i = 0; $i != count($check_dup); $i++){
+                            echo '<option value="' . $check_dup[$i] . '">' . $check_dup[$i] . '</option>';
+                        }
+                    ?>
+                    <!--option value="Monoblack">Monoblack</option>
                     <option value="Black">Black</option>
                     <option value="White">White</option>
                     <option value="Red">Red</option>
@@ -145,7 +201,7 @@
                     <option value="Yellow">Yellow</option>
                     <option value="Blue">Blue</option>
                     <option value="Clear">Clear</option>
-                    <option value="Sliver">Sliver</option>
+                    <option value="Sliver">Sliver</option-->
                 </select>
             </div>
             

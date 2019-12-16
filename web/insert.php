@@ -82,7 +82,27 @@
                 <br><br>
                 <label for="color">Color&ensp;:&ensp; </label>
                 <select name='color' id='color' class="form-control" style="width: 180px; display: inline;">
-                    <option value="Monoblack">Monoblack</option>
+                    <?php
+                        $conn = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+                        $query = new MongoDB\Driver\Query([]);
+                        $rows = $conn->executeQuery("PND_Project.shoes", $query);
+
+                        $check_dup = [];
+                        foreach($rows as $row){
+                            foreach($row->detail as $detail){
+                                if(in_array($detail->color, $check_dup)){
+                                    continue;
+                                }else{
+                                    array_push($check_dup, $detail->color);
+                                }
+                            }
+                        }
+                        sort($check_dup);
+                        for($i = 0; $i != count($check_dup); $i++){
+                            echo '<option value="' . $check_dup[$i] . '">' . $check_dup[$i] . '</option>';
+                        }
+                    ?>
+                    <!--option value="Monoblack">Monoblack</option>
                     <option value="Black">Black</option>
                     <option value="White">White</option>
                     <option value="Red">Red</option>
@@ -97,7 +117,7 @@
                     <option value="Yellow">Yellow</option>
                     <option value="Blue">Blue</option>
                     <option value="Clear">Clear</option>
-                    <option value="Sliver">Sliver</option>
+                    <option value="Sliver">Sliver</option-->
                 </select>
             </div>
             </div>
